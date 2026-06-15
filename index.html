@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap (QRIS, DANA, PayPal, Crypto). Tersedia juga download free Drone View & Damage (pilih dari dropdown).">
-    <title>VIP Script Hub | Premium & Worth It</title>
+    <meta name="description" content="Download free Drone View & Damage script. Pilih file, dapatkan link, salin dan download.">
+    <title>Free Download Hub | Script & Tools</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,174 +17,153 @@
         }
 
         body {
-            background: linear-gradient(145deg, #f9fafc 0%, #f1f4fa 100%);
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
             font-family: 'Inter', sans-serif;
-            padding: 2rem 1.5rem;
-            color: #1e293b;
-            position: relative;
-        }
-
-        /* language switcher */
-        .lang-switch {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            background: white;
-            border-radius: 60px;
-            padding: 0.3rem 0.8rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            min-height: 100vh;
             display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-        .lang-btn {
-            background: transparent;
-            border: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-            color: #475569;
-        }
-        .lang-btn.active {
-            background: #1f8ef1;
-            color: white;
-            box-shadow: 0 2px 6px rgba(31,142,241,0.3);
-        }
-        .lang-btn:not(.active):hover {
-            background: #eef2ff;
-            color: #1f3a6b;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.02);
-            padding: 1.8rem 2rem;
-            transition: transform 0.2s ease, box-shadow 0.2s;
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
-        }
-
-        .double-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
-        }
-
-        @media (max-width: 700px) {
-            .double-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            body {
-                padding: 1.2rem;
-                padding-top: 4rem;
-            }
-            .card {
-                padding: 1.5rem;
-            }
-            .lang-switch {
-                top: 0.7rem;
-                right: 1rem;
-            }
-        }
-
-        .telegram-title {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            color: #0f2b3d;
-        }
-        .telegram-title i {
-            font-size: 1.8rem;
-            color: #26A5E4;
-        }
-
-        .big-click-btn {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            background: linear-gradient(95deg, #1f8ef1, #0f6bcb);
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding: 0.8rem 1.6rem;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: all 0.2s;
-            margin: 0.6rem 0 1rem 0;
-            width: fit-content;
-            box-shadow: 0 6px 14px rgba(31,142,241,0.25);
-            border: none;
-            font-family: inherit;
-        }
-        .big-click-btn i {
-            font-size: 1.3rem;
-        }
-        .big-click-btn:hover {
-            background: linear-gradient(95deg, #0f7ad9, #0a5bb3);
-            transform: scale(1.02);
-            box-shadow: 0 10px 18px rgba(31,142,241,0.3);
+            padding: 1.5rem;
         }
 
-        .url-row {
-            background: #f1f5f9;
+        .download-card {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0,0,0,0.02);
+            padding: 2rem 1.8rem;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .download-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .header-icon {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .header-icon i {
+            font-size: 3rem;
+            color: #1f8ef1;
+            background: #eef2ff;
+            padding: 0.8rem;
+            border-radius: 2rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #0f2b3d, #1f8ef1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.3rem;
+        }
+        .sub {
+            text-align: center;
+            color: #5b6e8c;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .select-group {
+            margin-bottom: 1.8rem;
+        }
+        .select-group label {
+            font-weight: 600;
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .custom-select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             border-radius: 60px;
-            padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+            border: 1px solid #cbd5e1;
+            background-color: white;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1.2rem center;
+            background-size: 1.2rem;
+        }
+        .custom-select:hover, .custom-select:focus {
+            border-color: #1f8ef1;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(31,142,241,0.1);
+        }
+
+        .link-area {
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 0.2rem;
+            margin-top: 1rem;
+            min-height: 100px;
+        }
+        .link-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-top: 0.8rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #e9eef3;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
         }
-        .url-text {
+        .link-info {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            flex: 2;
+            min-width: 180px;
+        }
+        .link-info i {
+            font-size: 1.3rem;
+            color: #1f8ef1;
+            background: #eef2ff;
+            padding: 0.4rem;
+            border-radius: 50%;
+        }
+        .link-url {
+            font-size: 0.85rem;
             word-break: break-all;
             color: #1e293b;
-            background: white;
-            padding: 0.3rem 0.9rem;
+            background: #f1f5f9;
+            padding: 0.4rem 0.8rem;
             border-radius: 40px;
             font-weight: 500;
         }
-        .url-text a {
+        .link-url a {
             text-decoration: none;
             color: #1e6fdf;
             font-weight: 600;
-            transition: color 0.2s;
         }
-        .url-text a:hover {
-            color: #0f5bc2;
+        .link-url a:hover {
             text-decoration: underline;
         }
         .copy-btn {
             background: #eef2ff;
             border: none;
-            padding: 0.45rem 1.2rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 40px;
             font-weight: 600;
             font-size: 0.8rem;
@@ -198,519 +177,148 @@
         }
         .copy-btn:hover {
             background: #d9e6ff;
-            color: #0f2f6f;
-            transform: scale(0.97);
+            transform: scale(0.98);
         }
-
-        .price-header {
+        .empty-state {
             text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .price-header h2 {
-            font-size: 1.7rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #0f2b3d, #2563eb);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.3px;
-        }
-        .price-header p {
-            color: #4b5563;
-            font-weight: 500;
-        }
-        .price-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-top: 1rem;
-        }
-        .price-card {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            padding: 1rem 1.8rem;
-            min-width: 150px;
-            text-align: center;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
-            border: 1px solid #e9eef3;
-            transition: all 0.2s;
-            flex: 1 0 auto;
-        }
-        .price-card:hover {
-            border-color: #cbdff2;
-            background: #fefefe;
-        }
-        .price-currency {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-        .price-region {
-            font-weight: 600;
-            color: #2c3e66;
-            margin-top: 0.3rem;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.2rem;
-            margin: 1rem 0 0.4rem;
-        }
-        .payment-badge {
-            background: #f8fafc;
-            padding: 0.6rem 1.4rem;
-            border-radius: 60px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1rem;
-            border: 1px solid #e2edf7;
-        }
-        .payment-badge i {
-            font-size: 1.3rem;
-        }
-
-        .why-list {
-            list-style: none;
-            margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-        .why-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 500;
-            background: #f5f9ff;
-            padding: 0.7rem 1.2rem;
-            border-radius: 60px;
-        }
-        .why-list li i {
-            color: #10b981;
-            font-size: 1.2rem;
-            width: 1.6rem;
-        }
-
-        .stock-urgent {
-            background: linear-gradient(115deg, #ffedd5, #fed7aa);
-            border-radius: 2rem;
-            text-align: center;
-            padding: 1.2rem;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: #9b2c1d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            border-left: 6px solid #f97316;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: #0c4a6e;
-        }
-        .section-title i {
-            color: #f59e0b;
-        }
-        
-        /* Dropdown style untuk download free */
-        .free-select-wrapper {
-            margin: 1rem 0 1rem;
-            width: 100%;
-        }
-        .free-select {
-            width: 100%;
-            padding: 0.8rem 1.2rem;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            border-radius: 60px;
-            border: 1px solid #cbd5e1;
-            background-color: white;
-            color: #1e293b;
-            cursor: pointer;
-            transition: all 0.2s;
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1rem;
-        }
-        .free-select:hover, .free-select:focus {
-            border-color: #1f8ef1;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(31,142,241,0.1);
-        }
-        .selected-link-area {
-            margin-top: 1rem;
-            background: #f8fafc;
-            border-radius: 1.5rem;
-            padding: 0.2rem;
-            min-height: 90px;
-        }
-        .empty-selection {
-            text-align: center;
-            padding: 1.5rem;
+            padding: 1.8rem;
             color: #64748b;
             font-style: italic;
             background: #ffffffb3;
             border-radius: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
-        hr {
-            margin: 0.2rem 0;
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+        .empty-state i {
+            font-size: 2rem;
+            color: #94a3b8;
         }
-        footer {
+        .footer-note {
             text-align: center;
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-top: 0.8rem;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            margin-top: 1.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
         }
-        @media (max-width: 500px) {
-            .url-row {
+        @media (max-width: 550px) {
+            .download-card {
+                padding: 1.5rem;
+            }
+            .link-card {
                 flex-direction: column;
-                align-items: stretch;
-                border-radius: 1.5rem;
+                align-items: flex-start;
             }
             .copy-btn {
-                justify-content: center;
+                align-self: flex-end;
             }
-            .big-click-btn {
-                font-size: 1rem;
-                padding: 0.6rem 1.2rem;
-            }
-            .free-select {
-                font-size: 0.9rem;
-                padding: 0.7rem 1rem;
-            }
-            .payment-methods {
-                gap: 0.8rem;
-            }
-            .payment-badge {
-                padding: 0.4rem 1rem;
-                font-size: 0.85rem;
+            .link-info {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+<div class="download-card">
+    <div class="header-icon">
+        <i class="fas fa-cloud-download-alt"></i>
+    </div>
+    <h1>Free Download Hub</h1>
+    <div style="text-align: center;">
+        <span class="sub"><i class="fas fa-file-alt"></i> Pilih file, dapatkan link</span>
+    </div>
 
-<div class="lang-switch">
-    <button class="lang-btn active" data-lang="id">🇮🇩 Indonesia</button>
-    <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-</div>
+    <div class="select-group">
+        <label><i class="fas fa-list-ul"></i> Pilih file yang ingin di-download:</label>
+        <select id="fileSelect" class="custom-select">
+            <option value="" disabled selected>-- Klik untuk membuka daftar --</option>
+        </select>
+    </div>
 
-<div class="container">
-    <!-- Bagian JOIN GROUP + OWNER -->
-    <div class="double-grid">
-        <!-- JOIN GROUP FREE! -->
-        <div class="card">
-            <div class="telegram-title">
-                <i class="fab fa-telegram-plane"></i>
-                <span class="join-title">JOIN GROUP FREE!</span>
-            </div>
-            <a href="https://t.me/vikramsiaw" target="_blank" class="big-click-btn">
-                <i class="fas fa-hand-pointer"></i> <span class="btn-join-text">Klik di sini 👇</span>
-            </a>
-            <div class="url-row">
-                <div class="url-text">
-                    <i class="fab fa-telegram"></i>
-                    <a href="https://t.me/vikramsiaw" target="_blank">https://t.me/vikramsiaw</a>
-                </div>
-                <button class="copy-btn" data-link="https://t.me/vikramsiaw">
-                    <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-                </button>
-            </div>
-            <p class="hint-text" style="font-size: 0.75rem; color:#5b6e8c; margin-top: 0.6rem;">
-                <i class="fas fa-link"></i> <span class="hint-join">Klik tombol biru atau link di atas untuk gabung, tekan "Salin" untuk copas.</span>
-            </p>
-        </div>
-
-        <!-- MAU SCRIPT VIP? Chat langsung ke owner -->
-        <div class="card">
-            <div class="telegram-title">
-                <i class="fas fa-crown"></i>
-                <span class="vip-title">MAU SCRIPT VIP?</span>
-            </div>
-            <div class="owner-label" style="font-weight: 600; color:#2c3e50; margin-bottom: 0.5rem;">Chat langsung ke owner 👇</div>
-            <a href="https://t.me/SiwaMods" target="_blank" class="big-click-btn" style="background: linear-gradient(95deg, #1e6b3b, #0f5530);">
-                <i class="fab fa-telegram"></i> <span class="chat-owner-text">Chat Owner</span>
-            </a>
-            <div class="url-row">
-                <div class="url-text">
-                    <i class="fab fa-telegram"></i>
-                    <a href="https://t.me/SiwaMods" target="_blank">https://t.me/SiwaMods</a>
-                </div>
-                <button class="copy-btn" data-link="https://t.me/SiwaMods">
-                    <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-                </button>
-            </div>
-            <p class="hint-text" style="font-size: 0.75rem; color:#5b6e8c; margin-top: 0.6rem;">
-                <i class="fas fa-bolt"></i> <span class="owner-hint">Respon super cepat, garansi premium.</span>
-            </p>
+    <div id="linkDisplayArea" class="link-area">
+        <div class="empty-state">
+            <i class="fas fa-mouse-pointer"></i>
+            <span>Silakan pilih file dari dropdown di atas.</span>
         </div>
     </div>
 
-    <!-- HARGA SCRIPT - WORTH IT BANGET! -->
-    <div class="card">
-        <div class="price-header">
-            <h2><span class="price-head-main">💰 HARGA SCRIPT</span> <span class="price-head-badge" style="background: linear-gradient(135deg,#f59e0b,#dc2626); background-clip:text; -webkit-background-clip:text; color:transparent;">- WORTH IT BANGET!</span></h2>
-            <p class="price-sub">Dapatkan akses penuh script premium seumur hidup + update gratis</p>
-        </div>
-        <div class="price-grid">
-            <div class="price-card">
-                <div class="price-currency">🇮🇩 95K</div>
-                <div class="price-region">Indonesia (IDR)</div>
-            </div>
-            <div class="price-card">
-                <div class="price-currency">🇺🇸 $7</div>
-                <div class="price-region">USA / Global (USD)</div>
-            </div>
-            <div class="price-card">
-                <div class="price-currency">🇲🇾 23 MYR</div>
-                <div class="price-region">Malaysia (Ringgit)</div>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 0.7rem; font-weight: 500; background: #eef2ff; width: fit-content; margin-left: auto; margin-right: auto; padding: 0.3rem 1.2rem; border-radius: 60px;">
-            <i class="fas fa-tag"></i> <span class="price-badge-text">Harga spesial langsung dari owner</span>
-        </div>
+    <div class="footer-note">
+        <i class="fas fa-database"></i> Link langsung dari server premium — update berkala
     </div>
-
-    <!-- METODE PEMBAYARAN SUPER LENGKAP + QRIS (Indonesia & Malaysia) -->
-    <div class="card">
-        <div class="section-title">
-            <i class="fas fa-credit-card"></i> 
-            <span class="payment-title">METODE PEMBAYARAN SUPER LENGKAP:</span>
-        </div>
-        <div class="payment-methods">
-            <div class="payment-badge"><i class="fas fa-qrcode"></i> QRIS (ID & MY)</div>
-            <div class="payment-badge"><i class="fas fa-wallet"></i> DANA</div>
-            <div class="payment-badge"><i class="fab fa-paypal"></i> PayPal</div>
-            <div class="payment-badge"><i class="fas fa-coins"></i> Crypto (USDT/BTC)</div>
-        </div>
-        <hr style="margin: 1rem 0 0.2rem;">
-        <p class="payment-note" style="text-align: center; font-size: 0.8rem; margin-top: 0.7rem; color:#2c5f8a;"><i class="fas fa-shield-alt"></i> Transaksi aman & nyaman, konfirmasi cepat. QRIS tersedia untuk pembeli dari Indonesia & Malaysia.</p>
-    </div>
-
-    <!-- KENAPA HARUS BELI DARI KAMI? -->
-    <div class="card">
-        <div class="section-title">
-            <i class="fas fa-gem"></i>
-            <span class="why-title">✨ KENAPA HARUS BELI DARI KAMI?</span>
-        </div>
-        <ul class="why-list">
-            <li><i class="fas fa-check-circle"></i> <span class="why1">Script premium work 100% (tested & trusted)</span></li>
-            <li><i class="fas fa-sync-alt"></i> <span class="why2">Update berkala GRATIS seumur hidup</span></li>
-            <li><i class="fas fa-headset"></i> <span class="why3">Support respon cepat via Telegram (24/7)</span></li>
-            <li><i class="fas fa-laptop-code"></i> <span class="why4">Full dokumentasi & panduan install</span></li>
-        </ul>
-    </div>
-
-    <!-- DOWNLOAD FREE - Menggunakan dropdown (bisa digulir) -->
-    <div class="card">
-        <div class="section-title">
-            <i class="fas fa-cloud-download-alt"></i>
-            <span class="download-free-title">DOWNLOAD FREE</span>
-        </div>
-        <p class="free-desc" style="margin-bottom: 0.5rem; color: #475569; font-size: 0.9rem;">
-            <i class="fas fa-info-circle"></i> <span class="free-desc-text">Pilih file dari daftar di bawah ini, link akan muncul otomatis.</span>
-        </p>
-
-        <!-- Dropdown pilihan (dapat digulir) -->
-        <div class="free-select-wrapper">
-            <select id="freeSelect" class="free-select">
-                <option value="" disabled selected>-- Pilih file yang ingin di-download --</option>
-            </select>
-        </div>
-
-        <!-- Area untuk menampilkan link yang dipilih -->
-        <div id="selectedLinkArea" class="selected-link-area">
-            <div class="empty-selection" id="emptySelectionMsg">
-                <i class="fas fa-mouse-pointer"></i> <span class="select-prompt">Silakan pilih file dari dropdown di atas.</span>
-            </div>
-        </div>
-        <p class="free-footer-note" style="font-size: 0.7rem; margin-top: 1rem; color:#6c86a3; text-align: center;">
-            <i class="fas fa-database"></i> <span class="free-note-text">Link free langsung dari server, update berkala.</span>
-        </p>
-    </div>
-
-    <!-- BURUAN STOK TERBATAS -->
-    <div class="stock-urgent">
-        <i class="fas fa-rocket"></i> <span class="stock-text">🚀 Buruan, stok terbatas! 🚀</span>
-        <i class="fas fa-fire"></i>
-    </div>
-
-    <!-- informasi tambahan -->
-    <div style="background: #eef3fc; border-radius: 1.2rem; padding: 0.9rem 1rem; text-align: center; font-size: 0.8rem; color:#1e4663;">
-        <i class="fas fa-copy"></i> <span class="global-info">Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.</span>
-    </div>
-
-    <footer>
-        © 2025 VIP Script Hub — <span class="footer-text">All trademarks belong to their respective owners.</span>
-    </footer>
 </div>
 
 <script>
-    // Data item download free (ID, link, label multi bahasa, icon)
-    const freeItems = [
-        { id: "drone2", link: "https://bicolink.com/rPCZ", labelId: "Drone View x2", labelEn: "Drone View x2", icon: "fa-eye" },
-        { id: "drone3", link: "https://bicolink.com/ew122gdaxM", labelId: "Drone View X3", labelEn: "Drone View X3", icon: "fa-eye" },
-        { id: "drone4", link: "https://bicolink.com/H5gX1juHJ5", labelId: "Drone View x4", labelEn: "Drone View x4", icon: "fa-eye" },
-        { id: "damage1", link: "https://bicolink.com/N9x0", labelId: "Damage Txt + Drone View x3", labelEn: "Damage Txt + Drone View x3", icon: "fa-skull" },
-        { id: "damage2", link: "https://bicolink.com/K4E7Fwlz1", labelId: "Damage Bisa Main Ranked", labelEn: "Damage Can Play Ranked", icon: "fa-skull" },
-        { id: "damage70", link: "https://bicolink.com/CwWl839qHv", labelId: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", labelEn: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", icon: "fa-bolt" }
+    // Daftar file (sudah termasuk DAMAGE MAX yang baru)
+    const fileList = [
+        { id: "drone2", name: "Drone View x2", link: "https://bicolink.com/rPCZ", icon: "fa-eye" },
+        { id: "drone3", name: "Drone View X3", link: "https://bicolink.com/ew122gdaxM", icon: "fa-eye" },
+        { id: "drone4", name: "Drone View x4", link: "https://bicolink.com/H5gX1juHJ5", icon: "fa-eye" },
+        { id: "damage_txt", name: "Damage Txt + Drone View x3", link: "https://bicolink.com/N9x0", icon: "fa-skull" },
+        { id: "damage_ranked", name: "Damage Bisa Main Ranked", link: "https://bicolink.com/K4E7Fwlz1", icon: "fa-skull" },
+        { id: "damage_70", name: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", link: "https://bicolink.com/CwWl839qHv", icon: "fa-bolt" },
+        { id: "damage_max", name: "DAMAGE MAX WORK ALL HERO + BYPASS + DRONE VIEW", link: "https://bicolink.com/xXy0x298XL", icon: "fa-bolt" }
     ];
 
-    let currentLang = 'id';
-    let activeItem = null; // untuk menyimpan item yang sedang ditampilkan linknya
+    // Elemen DOM
+    const selectEl = document.getElementById('fileSelect');
+    const displayArea = document.getElementById('linkDisplayArea');
 
-    // Terjemahan global lainnya
-    const translations = {
-        id: {
-            join_title: "JOIN GROUP FREE!",
-            btn_join: "Klik di sini 👇",
-            copy_text: "Salin link",
-            hint_join: "Klik tombol biru atau link di atas untuk gabung, tekan \"Salin\" untuk copas.",
-            vip_title: "MAU SCRIPT VIP?",
-            owner_label: "Chat langsung ke owner 👇",
-            chat_owner: "Chat Owner",
-            owner_hint: "Respon super cepat, garansi premium.",
-            price_head: "💰 HARGA SCRIPT",
-            price_worth: "- WORTH IT BANGET!",
-            price_sub: "Dapatkan akses penuh script premium seumur hidup + update gratis",
-            price_badge: "Harga spesial langsung dari owner",
-            payment_title: "METODE PEMBAYARAN SUPER LENGKAP:",
-            payment_note: "Transaksi aman & nyaman, konfirmasi cepat. QRIS tersedia untuk pembeli dari Indonesia & Malaysia.",
-            why_title: "✨ KENAPA HARUS BELI DARI KAMI?",
-            why1: "Script premium work 100% (tested & trusted)",
-            why2: "Update berkala GRATIS seumur hidup",
-            why3: "Support respon cepat via Telegram (24/7)",
-            why4: "Full dokumentasi & panduan install",
-            stock_text: "🚀 Buruan, stok terbatas! 🚀",
-            global_info: "Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.",
-            footer_text: "All trademarks belong to their respective owners.",
-            download_free_title: "DOWNLOAD FREE",
-            free_desc_text: "Pilih file dari daftar di bawah ini, link akan muncul otomatis.",
-            free_note_text: "Link free langsung dari server, update berkala.",
-            select_prompt: "Silakan pilih file dari dropdown di atas.",
-            copy_btn_text: "Salin link",
-            copied_feedback: "Tersalin!",
-            default_option: "-- Pilih file yang ingin di-download --"
-        },
-        en: {
-            join_title: "JOIN FREE GROUP!",
-            btn_join: "Click here 👇",
-            copy_text: "Copy link",
-            hint_join: "Click the blue button or the link above to join, press 'Copy' to copy.",
-            vip_title: "WANT VIP SCRIPT?",
-            owner_label: "Chat directly to owner 👇",
-            chat_owner: "Chat Owner",
-            owner_hint: "Super fast response, premium guarantee.",
-            price_head: "💰 SCRIPT PRICE",
-            price_worth: "- TOTALLY WORTH IT!",
-            price_sub: "Get full access to premium script lifetime + free updates",
-            price_badge: "Special price directly from owner",
-            payment_title: "SUPER COMPLETE PAYMENT METHODS:",
-            payment_note: "Safe & convenient transaction, fast confirmation. QRIS available for buyers from Indonesia & Malaysia.",
-            why_title: "✨ WHY BUY FROM US?",
-            why1: "100% premium working script (tested & trusted)",
-            why2: "Lifetime FREE regular updates",
-            why3: "Fast response support via Telegram (24/7)",
-            why4: "Full documentation & installation guide",
-            stock_text: "🚀 Hurry up, limited stock! 🚀",
-            global_info: "All Telegram links are clickable and copyable — Click the copy button next to each link or click the link directly to open Telegram.",
-            footer_text: "All trademarks belong to their respective owners.",
-            download_free_title: "FREE DOWNLOAD",
-            free_desc_text: "Select a file from the dropdown below, the link will appear automatically.",
-            free_note_text: "Free links directly from server, regularly updated.",
-            select_prompt: "Please select a file from the dropdown above.",
-            copy_btn_text: "Copy link",
-            copied_feedback: "Copied!",
-            default_option: "-- Select file to download --"
+    // Fungsi untuk menampilkan link yang dipilih
+    function showSelectedFile(selectedId) {
+        if (!selectedId) {
+            // Tampilkan empty state
+            displayArea.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <span>Silakan pilih file dari dropdown di atas.</span>
+                </div>
+            `;
+            return;
         }
-    };
+        const file = fileList.find(f => f.id === selectedId);
+        if (!file) return;
 
-    // Fungsi untuk menampilkan link dari item yang dipilih
-    function displaySelectedLink(item) {
-        const area = document.getElementById('selectedLinkArea');
-        if (!area) return;
-        // Bersihkan area
-        area.innerHTML = '';
-        
-        // Buat struktur url-row
-        const urlRow = document.createElement('div');
-        urlRow.className = 'url-row';
-        
-        // Nama file (label sesuai bahasa saat ini)
-        const itemLabel = currentLang === 'id' ? item.labelId : item.labelEn;
-        const nameSpan = document.createElement('div');
-        nameSpan.style.fontWeight = '600';
-        nameSpan.style.minWidth = '150px';
-        nameSpan.style.display = 'flex';
-        nameSpan.style.alignItems = 'center';
-        nameSpan.style.gap = '0.5rem';
-        nameSpan.style.flexWrap = 'wrap';
-        nameSpan.innerHTML = `<i class="fas ${item.icon}"></i> ${itemLabel}`;
-        
-        // Link container
-        const linkDiv = document.createElement('div');
-        linkDiv.className = 'url-text';
-        linkDiv.style.flex = '1';
-        linkDiv.innerHTML = `<i class="fas fa-link"></i> <a href="${item.link}" target="_blank">${item.link}</a>`;
-        
-        // Tombol copy
-        const copyButton = document.createElement('button');
-        copyButton.className = 'copy-btn';
-        copyButton.setAttribute('data-link', item.link);
-        const copyTextSpan = document.createElement('span');
-        copyTextSpan.className = 'copy-text';
-        copyTextSpan.innerText = translations[currentLang].copy_btn_text;
-        copyButton.innerHTML = '<i class="fas fa-copy"></i> ';
-        copyButton.appendChild(copyTextSpan);
-        
-        // Event copy untuk tombol dinamis
-        copyButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            copyToClipboard(item.link, copyButton);
-        });
-        
-        urlRow.appendChild(nameSpan);
-        urlRow.appendChild(linkDiv);
-        urlRow.appendChild(copyButton);
-        area.appendChild(urlRow);
-        activeItem = item;
+        // Buat tampilan link
+        displayArea.innerHTML = `
+            <div class="link-card">
+                <div class="link-info">
+                    <i class="fas ${file.icon}"></i>
+                    <div class="link-url">
+                        <a href="${file.link}" target="_blank">${file.link}</a>
+                    </div>
+                </div>
+                <button class="copy-btn" data-link="${file.link}">
+                    <i class="fas fa-copy"></i> Salin link
+                </button>
+            </div>
+        `;
+
+        // Tambahkan event listener untuk tombol copy
+        const copyBtn = displayArea.querySelector('.copy-btn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkToCopy = copyBtn.getAttribute('data-link');
+                copyToClipboard(linkToCopy, copyBtn);
+            });
+        }
     }
-    
-    // Fungsi copy (versi global dengan feedback)
+
+    // Fungsi copy ke clipboard dengan feedback
     async function copyToClipboard(text, buttonElement) {
         try {
             await navigator.clipboard.writeText(text);
             const originalHTML = buttonElement.innerHTML;
-            const feedback = currentLang === 'id' ? 'Tersalin!' : 'Copied!';
-            buttonElement.innerHTML = `<i class="fas fa-check"></i> <span class="copy-text">${feedback}</span>`;
+            buttonElement.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
             buttonElement.style.backgroundColor = "#c6e0ff";
             setTimeout(() => {
                 buttonElement.innerHTML = originalHTML;
                 buttonElement.style.backgroundColor = "";
-                const span = buttonElement.querySelector('.copy-text');
-                if (span) span.innerText = translations[currentLang].copy_btn_text;
             }, 1500);
         } catch (err) {
+            // Fallback
             const textarea = document.createElement('textarea');
             textarea.value = text;
             document.body.appendChild(textarea);
@@ -718,147 +326,29 @@
             document.execCommand('copy');
             document.body.removeChild(textarea);
             const originalHTML = buttonElement.innerHTML;
-            const feedback = currentLang === 'id' ? 'Disalin!' : 'Copied!';
-            buttonElement.innerHTML = `<i class="fas fa-check"></i> <span class="copy-text">${feedback}</span>`;
+            buttonElement.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
             setTimeout(() => {
                 buttonElement.innerHTML = originalHTML;
-                const span = buttonElement.querySelector('.copy-text');
-                if (span) span.innerText = translations[currentLang].copy_btn_text;
             }, 1500);
         }
     }
-    
-    // Render dropdown options berdasarkan bahasa
-    function renderDropdown() {
-        const selectEl = document.getElementById('freeSelect');
-        if (!selectEl) return;
-        // Kosongkan kecuali option placeholder
-        selectEl.innerHTML = '';
-        const placeholderOption = document.createElement('option');
-        placeholderOption.value = '';
-        placeholderOption.disabled = true;
-        placeholderOption.selected = true;
-        placeholderOption.textContent = translations[currentLang].default_option;
-        selectEl.appendChild(placeholderOption);
-        
-        freeItems.forEach(item => {
+
+    // Mengisi dropdown
+    function populateDropdown() {
+        fileList.forEach(file => {
             const option = document.createElement('option');
-            option.value = item.id;
-            const label = currentLang === 'id' ? item.labelId : item.labelEn;
-            option.textContent = label;
-            option.setAttribute('data-link', item.link);
-            option.setAttribute('data-icon', item.icon);
-            option.setAttribute('data-label-id', item.labelId);
-            option.setAttribute('data-label-en', item.labelEn);
+            option.value = file.id;
+            option.textContent = file.name;
             selectEl.appendChild(option);
         });
-        
-        // Event listener untuk perubahan pilihan
-        selectEl.onchange = (e) => {
-            const selectedId = e.target.value;
-            if (!selectedId) {
-                // Jika placeholder dipilih, kosongkan area
-                const area = document.getElementById('selectedLinkArea');
-                if (area) {
-                    area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${translations[currentLang].select_prompt}</span></div>`;
-                }
-                activeItem = null;
-                return;
-            }
-            const selectedItem = freeItems.find(item => item.id === selectedId);
-            if (selectedItem) {
-                displaySelectedLink(selectedItem);
-            }
-        };
-    }
-    
-    // Update semua teks statis (bagian lain) + reset dropdown & tampilan link
-    function setLanguage(lang) {
-        currentLang = lang;
-        const t = translations[lang];
-        if (!t) return;
-        
-        // Update elemen global
-        document.querySelectorAll('.join-title').forEach(el => el.innerText = t.join_title);
-        document.querySelectorAll('.btn-join-text').forEach(el => el.innerText = t.btn_join);
-        document.querySelectorAll('.copy-text').forEach(el => {
-            if (el.closest('.copy-btn') && !el.closest('#selectedLinkArea')) {
-                el.innerText = t.copy_text;
-            }
-        });
-        document.querySelectorAll('.hint-join').forEach(el => el.innerText = t.hint_join);
-        document.querySelectorAll('.vip-title').forEach(el => el.innerText = t.vip_title);
-        document.querySelectorAll('.owner-label').forEach(el => el.innerText = t.owner_label);
-        document.querySelectorAll('.chat-owner-text').forEach(el => el.innerText = t.chat_owner);
-        document.querySelectorAll('.owner-hint').forEach(el => el.innerText = t.owner_hint);
-        document.querySelectorAll('.price-head-main').forEach(el => el.innerText = t.price_head);
-        document.querySelectorAll('.price-head-badge').forEach(el => el.innerText = t.price_worth);
-        document.querySelectorAll('.price-sub').forEach(el => el.innerText = t.price_sub);
-        document.querySelectorAll('.price-badge-text').forEach(el => el.innerText = t.price_badge);
-        document.querySelectorAll('.payment-title').forEach(el => el.innerText = t.payment_title);
-        document.querySelectorAll('.payment-note').forEach(el => el.innerHTML = `<i class="fas fa-shield-alt"></i> ${t.payment_note}`);
-        document.querySelectorAll('.why-title').forEach(el => el.innerText = t.why_title);
-        document.querySelectorAll('.why1').forEach(el => el.innerText = t.why1);
-        document.querySelectorAll('.why2').forEach(el => el.innerText = t.why2);
-        document.querySelectorAll('.why3').forEach(el => el.innerText = t.why3);
-        document.querySelectorAll('.why4').forEach(el => el.innerText = t.why4);
-        document.querySelectorAll('.stock-text').forEach(el => el.innerText = t.stock_text);
-        document.querySelectorAll('.global-info').forEach(el => el.innerText = t.global_info);
-        document.querySelectorAll('.footer-text').forEach(el => el.innerText = t.footer_text);
-        document.querySelectorAll('.download-free-title').forEach(el => el.innerText = t.download_free_title);
-        document.querySelectorAll('.free-desc-text').forEach(el => el.innerText = t.free_desc_text);
-        document.querySelectorAll('.free-note-text').forEach(el => el.innerText = t.free_note_text);
-        
-        // Render ulang dropdown dengan bahasa baru
-        renderDropdown();
-        
-        // Jika sebelumnya ada item yang aktif, tampilkan ulang dengan bahasa baru
-        if (activeItem) {
-            displaySelectedLink(activeItem);
-        } else {
-            // Tampilkan pesan kosong
-            const area = document.getElementById('selectedLinkArea');
-            if (area && (!area.children.length || area.children[0].classList?.contains('empty-selection') === false)) {
-                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
-            } else if (area && area.children.length === 0) {
-                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
-            }
-        }
-        
-        // update teks copy untuk tombol statis (join & owner)
-        document.querySelectorAll('.copy-btn:not(#selectedLinkArea .copy-btn)').forEach(btn => {
-            const span = btn.querySelector('.copy-text');
-            if (span) span.innerText = t.copy_text;
+        // Event listener saat pilihan berubah
+        selectEl.addEventListener('change', (e) => {
+            const selectedValue = e.target.value;
+            showSelectedFile(selectedValue);
         });
     }
-    
-    // Tombol bahasa
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            if (!lang) return;
-            setLanguage(lang);
-            langBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
-    });
-    
-    // Inisialisasi awal
-    setLanguage('id');
-    
-    // Untuk tombol copy statis (join/owner) tambahkan event listener
-    const staticCopyBtns = document.querySelectorAll('.copy-btn');
-    staticCopyBtns.forEach(btn => {
-        if (btn.getAttribute('data-listener') !== 'true') {
-            btn.setAttribute('data-listener', 'true');
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const link = btn.getAttribute('data-link');
-                if (link) copyToClipboard(link, btn);
-            });
-        }
-    });
+
+    populateDropdown();
 </script>
 </body>
 </html>
