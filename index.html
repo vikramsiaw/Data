@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap. Tersedia juga download free Drone View & Damage.">
+    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap (QRIS, DANA, PayPal, Crypto). Tersedia juga download free Drone View & Damage.">
     <title>VIP Script Hub | Premium & Worth It</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -196,9 +196,6 @@
             transition: all 0.2s;
             font-family: 'Inter', sans-serif;
         }
-        .copy-btn i {
-            font-size: 0.9rem;
-        }
         .copy-btn:hover {
             background: #d9e6ff;
             color: #0f2f6f;
@@ -261,7 +258,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.8rem;
+            gap: 1.2rem;
             margin: 1rem 0 0.4rem;
         }
         .payment-badge {
@@ -329,21 +326,54 @@
             color: #f59e0b;
         }
         
-        .free-subtitle {
-            font-weight: 700;
-            margin: 0.8rem 0 0.5rem;
-            font-size: 1.1rem;
-            color: #2c3e66;
+        /* Tombol pilihan download free */
+        .free-options-grid {
             display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.2rem 0 1rem;
+        }
+        .free-option-btn {
+            background: #eef2ff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1e3a8a;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            border-left: 3px solid #1f8ef1;
-            padding-left: 0.8rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
-        .free-subtitle:first-of-type {
-            margin-top: 0;
+        .free-option-btn i {
+            font-size: 1rem;
         }
-
+        .free-option-btn:hover {
+            background: #d9e6ff;
+            transform: translateY(-2px);
+        }
+        .free-option-btn:active {
+            transform: translateY(1px);
+        }
+        .selected-link-area {
+            margin-top: 1rem;
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 0.2rem;
+            min-height: 90px;
+        }
+        .empty-selection {
+            text-align: center;
+            padding: 1.5rem;
+            color: #64748b;
+            font-style: italic;
+            background: #ffffffb3;
+            border-radius: 1.2rem;
+        }
         hr {
             margin: 0.2rem 0;
             border: 0;
@@ -369,8 +399,15 @@
                 font-size: 1rem;
                 padding: 0.6rem 1.2rem;
             }
-            .free-subtitle {
-                font-size: 1rem;
+            .free-options-grid {
+                justify-content: center;
+            }
+            .payment-methods {
+                gap: 0.8rem;
+            }
+            .payment-badge {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -458,19 +495,20 @@
         </div>
     </div>
 
-    <!-- METODE PEMBAYARAN SUPER LENGKAP -->
+    <!-- METODE PEMBAYARAN SUPER LENGKAP + QRIS (Indonesia & Malaysia) -->
     <div class="card">
         <div class="section-title">
             <i class="fas fa-credit-card"></i> 
             <span class="payment-title">METODE PEMBAYARAN SUPER LENGKAP:</span>
         </div>
         <div class="payment-methods">
+            <div class="payment-badge"><i class="fas fa-qrcode"></i> QRIS (ID & MY)</div>
             <div class="payment-badge"><i class="fas fa-wallet"></i> DANA</div>
             <div class="payment-badge"><i class="fab fa-paypal"></i> PayPal</div>
             <div class="payment-badge"><i class="fas fa-coins"></i> Crypto (USDT/BTC)</div>
         </div>
         <hr style="margin: 1rem 0 0.2rem;">
-        <p class="payment-note" style="text-align: center; font-size: 0.8rem; margin-top: 0.7rem; color:#2c5f8a;"><i class="fas fa-shield-alt"></i> Transaksi aman & nyaman, konfirmasi cepat</p>
+        <p class="payment-note" style="text-align: center; font-size: 0.8rem; margin-top: 0.7rem; color:#2c5f8a;"><i class="fas fa-shield-alt"></i> Transaksi aman & nyaman, konfirmasi cepat. QRIS tersedia untuk pembeli dari Indonesia & Malaysia.</p>
     </div>
 
     <!-- KENAPA HARUS BELI DARI KAMI? -->
@@ -487,82 +525,27 @@
         </ul>
     </div>
 
-    <!-- DOWNLOAD FREE (Drone View & Damage) -->
+    <!-- DOWNLOAD FREE - Dengan pilihan tombol (Drone View / Damage) -->
     <div class="card">
         <div class="section-title">
             <i class="fas fa-cloud-download-alt"></i>
             <span class="download-free-title">DOWNLOAD FREE</span>
         </div>
-        <p class="free-desc" style="margin-bottom: 1rem; color: #475569; font-size: 0.9rem;">
-            <i class="fas fa-info-circle"></i> <span class="free-desc-text">Klik link atau salin untuk mengunduh file free. Support semua perangkat.</span>
+        <p class="free-desc" style="margin-bottom: 0.5rem; color: #475569; font-size: 0.9rem;">
+            <i class="fas fa-info-circle"></i> <span class="free-desc-text">Pilih file yang ingin kamu download, nanti akan muncul link-nya.</span>
         </p>
 
-        <!-- Drone View Section -->
-        <div class="free-subtitle">
-            <i class="fas fa-eye"></i> <span class="drone-label">Drone View</span>
-        </div>
-        <!-- item 1: Drone View x2 -->
-        <div class="url-row">
-            <div class="free-name" style="font-weight: 600; min-width: 130px;">Drone View x2</div>
-            <div class="url-text">
-                <i class="fas fa-link"></i>
-                <a href="https://bicolink.com/rPCZ" target="_blank">https://bicolink.com/rPCZ</a>
-            </div>
-            <button class="copy-btn" data-link="https://bicolink.com/rPCZ">
-                <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-            </button>
-        </div>
-        <!-- item 2: Drone View X3 -->
-        <div class="url-row">
-            <div class="free-name" style="font-weight: 600; min-width: 130px;">Drone View X3</div>
-            <div class="url-text">
-                <i class="fas fa-link"></i>
-                <a href="https://bicolink.com/ew122gdaxM" target="_blank">https://bicolink.com/ew122gdaxM</a>
-            </div>
-            <button class="copy-btn" data-link="https://bicolink.com/ew122gdaxM">
-                <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-            </button>
-        </div>
-        <!-- item 3: Drone View x4 -->
-        <div class="url-row">
-            <div class="free-name" style="font-weight: 600; min-width: 130px;">Drone View x4</div>
-            <div class="url-text">
-                <i class="fas fa-link"></i>
-                <a href="https://bicolink.com/H5gX1juHJ5" target="_blank">https://bicolink.com/H5gX1juHJ5</a>
-            </div>
-            <button class="copy-btn" data-link="https://bicolink.com/H5gX1juHJ5">
-                <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-            </button>
-        </div>
+        <!-- Tempat tombol pilihan (akan di-generate oleh JS) -->
+        <div id="freeOptionsContainer" class="free-options-grid"></div>
 
-        <!-- Damage Section -->
-        <div class="free-subtitle" style="margin-top: 1.5rem;">
-            <i class="fas fa-skull"></i> <span class="damage-label">Damage</span>
-        </div>
-        <!-- item 4: Damage Txt + Drone View x3 -->
-        <div class="url-row">
-            <div class="free-name" style="font-weight: 600; min-width: 130px;">Damage Txt + Drone View x3</div>
-            <div class="url-text">
-                <i class="fas fa-link"></i>
-                <a href="https://bicolink.com/N9x0" target="_blank">https://bicolink.com/N9x0</a>
+        <!-- Area untuk menampilkan link yang dipilih -->
+        <div id="selectedLinkArea" class="selected-link-area">
+            <div class="empty-selection" id="emptySelectionMsg">
+                <i class="fas fa-mouse-pointer"></i> <span class="select-prompt">Klik salah satu tombol di atas untuk menampilkan link download.</span>
             </div>
-            <button class="copy-btn" data-link="https://bicolink.com/N9x0">
-                <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-            </button>
-        </div>
-        <!-- item 5: Damage Bisa Main Ranked -->
-        <div class="url-row">
-            <div class="free-name" style="font-weight: 600; min-width: 130px;">Damage Play Ranked</div>
-            <div class="url-text">
-                <i class="fas fa-link"></i>
-                <a href="https://bicolink.com/K4E7Fwlz1" target="_blank">https://bicolink.com/K4E7Fwlz1</a>
-            </div>
-            <button class="copy-btn" data-link="https://bicolink.com/K4E7Fwlz1">
-                <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
-            </button>
         </div>
         <p class="free-footer-note" style="font-size: 0.7rem; margin-top: 1rem; color:#6c86a3; text-align: center;">
-            <i class="fas fa-database"></i> <span class="free-note-text">Link download free langsung dari server premium, update berkala.</span>
+            <i class="fas fa-database"></i> <span class="free-note-text">Link free langsung dari server, update berkala.</span>
         </p>
     </div>
 
@@ -583,7 +566,19 @@
 </div>
 
 <script>
-    // Daftar terjemahan (ID dan EN)
+    // Data item download free (ID, link, label multi bahasa)
+    const freeItems = [
+        { id: "drone2", link: "https://bicolink.com/rPCZ", labelId: "Drone View x2", labelEn: "Drone View x2", icon: "fa-eye" },
+        { id: "drone3", link: "https://bicolink.com/ew122gdaxM", labelId: "Drone View X3", labelEn: "Drone View X3", icon: "fa-eye" },
+        { id: "drone4", link: "https://bicolink.com/H5gX1juHJ5", labelId: "Drone View x4", labelEn: "Drone View x4", icon: "fa-eye" },
+        { id: "damage1", link: "https://bicolink.com/N9x0", labelId: "Damage Txt + Drone View x3", labelEn: "Damage Txt + Drone View x3", icon: "fa-skull" },
+        { id: "damage2", link: "https://bicolink.com/K4E7Fwlz1", labelId: "Damage Bisa Main Ranked", labelEn: "Damage Can Play Ranked", icon: "fa-skull" }
+    ];
+
+    let currentLang = 'id';
+    let activeItem = null; // untuk menyimpan item yang sedang ditampilkan linknya
+
+    // Terjemahan global lainnya
     const translations = {
         id: {
             join_title: "JOIN GROUP FREE!",
@@ -599,7 +594,7 @@
             price_sub: "Dapatkan akses penuh script premium seumur hidup + update gratis",
             price_badge: "Harga spesial langsung dari owner",
             payment_title: "METODE PEMBAYARAN SUPER LENGKAP:",
-            payment_note: "Transaksi aman & nyaman, konfirmasi cepat",
+            payment_note: "Transaksi aman & nyaman, konfirmasi cepat. QRIS tersedia untuk pembeli dari Indonesia & Malaysia.",
             why_title: "✨ KENAPA HARUS BELI DARI KAMI?",
             why1: "Script premium work 100% (tested & trusted)",
             why2: "Update berkala GRATIS seumur hidup",
@@ -609,10 +604,11 @@
             global_info: "Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.",
             footer_text: "All trademarks belong to their respective owners.",
             download_free_title: "DOWNLOAD FREE",
-            free_desc_text: "Klik link atau salin untuk mengunduh file free. Support semua perangkat.",
-            drone_label: "Drone View",
-            damage_label: "Damage",
-            free_note_text: "Link download free langsung dari server premium, update berkala."
+            free_desc_text: "Pilih file yang ingin kamu download, nanti akan muncul link-nya.",
+            free_note_text: "Link free langsung dari server, update berkala.",
+            select_prompt: "Klik salah satu tombol di atas untuk menampilkan link download.",
+            copy_btn_text: "Salin link",
+            copied_feedback: "Tersalin!"
         },
         en: {
             join_title: "JOIN FREE GROUP!",
@@ -628,7 +624,7 @@
             price_sub: "Get full access to premium script lifetime + free updates",
             price_badge: "Special price directly from owner",
             payment_title: "SUPER COMPLETE PAYMENT METHODS:",
-            payment_note: "Safe & convenient transaction, fast confirmation",
+            payment_note: "Safe & convenient transaction, fast confirmation. QRIS available for buyers from Indonesia & Malaysia.",
             why_title: "✨ WHY BUY FROM US?",
             why1: "100% premium working script (tested & trusted)",
             why2: "Lifetime FREE regular updates",
@@ -638,24 +634,127 @@
             global_info: "All Telegram links are clickable and copyable — Click the copy button next to each link or click the link directly to open Telegram.",
             footer_text: "All trademarks belong to their respective owners.",
             download_free_title: "FREE DOWNLOAD",
-            free_desc_text: "Click the link or copy to download free files. Supports all devices.",
-            drone_label: "Drone View",
-            damage_label: "Damage",
-            free_note_text: "Free download links directly from premium server, regularly updated."
+            free_desc_text: "Select the file you want to download, the link will appear.",
+            free_note_text: "Free links directly from server, regularly updated.",
+            select_prompt: "Click one of the buttons above to show download link.",
+            copy_btn_text: "Copy link",
+            copied_feedback: "Copied!"
         }
     };
 
-    let currentLang = 'id';
-
+    // Fungsi untuk menampilkan link dari item yang dipilih
+    function displaySelectedLink(item) {
+        const area = document.getElementById('selectedLinkArea');
+        if (!area) return;
+        // Bersihkan area
+        area.innerHTML = '';
+        
+        // Buat struktur url-row
+        const urlRow = document.createElement('div');
+        urlRow.className = 'url-row';
+        
+        // Nama file (label sesuai bahasa saat ini)
+        const itemLabel = currentLang === 'id' ? item.labelId : item.labelEn;
+        const nameSpan = document.createElement('div');
+        nameSpan.style.fontWeight = '600';
+        nameSpan.style.minWidth = '130px';
+        nameSpan.style.display = 'flex';
+        nameSpan.style.alignItems = 'center';
+        nameSpan.style.gap = '0.5rem';
+        nameSpan.innerHTML = `<i class="fas ${item.icon}"></i> ${itemLabel}`;
+        
+        // Link container
+        const linkDiv = document.createElement('div');
+        linkDiv.className = 'url-text';
+        linkDiv.innerHTML = `<i class="fas fa-link"></i> <a href="${item.link}" target="_blank">${item.link}</a>`;
+        
+        // Tombol copy
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-btn';
+        copyButton.setAttribute('data-link', item.link);
+        const copyTextSpan = document.createElement('span');
+        copyTextSpan.className = 'copy-text';
+        copyTextSpan.innerText = translations[currentLang].copy_btn_text;
+        copyButton.innerHTML = '<i class="fas fa-copy"></i> ';
+        copyButton.appendChild(copyTextSpan);
+        
+        // Event copy untuk tombol dinamis
+        copyButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            copyToClipboard(item.link, copyButton);
+        });
+        
+        urlRow.appendChild(nameSpan);
+        urlRow.appendChild(linkDiv);
+        urlRow.appendChild(copyButton);
+        area.appendChild(urlRow);
+        activeItem = item;
+    }
+    
+    // Fungsi copy (versi global dengan feedback)
+    async function copyToClipboard(text, buttonElement) {
+        try {
+            await navigator.clipboard.writeText(text);
+            const originalHTML = buttonElement.innerHTML;
+            const feedback = currentLang === 'id' ? 'Tersalin!' : 'Copied!';
+            buttonElement.innerHTML = `<i class="fas fa-check"></i> <span class="copy-text">${feedback}</span>`;
+            buttonElement.style.backgroundColor = "#c6e0ff";
+            setTimeout(() => {
+                buttonElement.innerHTML = originalHTML;
+                buttonElement.style.backgroundColor = "";
+                const span = buttonElement.querySelector('.copy-text');
+                if (span) span.innerText = translations[currentLang].copy_btn_text;
+            }, 1500);
+        } catch (err) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const originalHTML = buttonElement.innerHTML;
+            const feedback = currentLang === 'id' ? 'Disalin!' : 'Copied!';
+            buttonElement.innerHTML = `<i class="fas fa-check"></i> <span class="copy-text">${feedback}</span>`;
+            setTimeout(() => {
+                buttonElement.innerHTML = originalHTML;
+                const span = buttonElement.querySelector('.copy-text');
+                if (span) span.innerText = translations[currentLang].copy_btn_text;
+            }, 1500);
+        }
+    }
+    
+    // Render tombol pilihan berdasarkan bahasa
+    function renderFreeButtons() {
+        const container = document.getElementById('freeOptionsContainer');
+        if (!container) return;
+        container.innerHTML = '';
+        freeItems.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'free-option-btn';
+            const label = currentLang === 'id' ? item.labelId : item.labelEn;
+            btn.innerHTML = `<i class="fas ${item.icon}"></i> ${label}`;
+            btn.addEventListener('click', () => {
+                displaySelectedLink(item);
+            });
+            container.appendChild(btn);
+        });
+    }
+    
+    // Update semua teks statis (bagian lain) + reset tampilan link jika perlu
     function setLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
         if (!t) return;
-
-        // Update semua elemen dengan kelas yang sudah ditandai
+        
+        // Update elemen global
         document.querySelectorAll('.join-title').forEach(el => el.innerText = t.join_title);
         document.querySelectorAll('.btn-join-text').forEach(el => el.innerText = t.btn_join);
-        document.querySelectorAll('.copy-text').forEach(el => el.innerText = t.copy_text);
+        document.querySelectorAll('.copy-text').forEach(el => {
+            // Hanya untuk tombol copy di area join/owner yang statis (bukan di dalam selectedLinkArea)
+            if (el.closest('.copy-btn') && !el.closest('#selectedLinkArea')) {
+                el.innerText = t.copy_text;
+            }
+        });
         document.querySelectorAll('.hint-join').forEach(el => el.innerText = t.hint_join);
         document.querySelectorAll('.vip-title').forEach(el => el.innerText = t.vip_title);
         document.querySelectorAll('.owner-label').forEach(el => el.innerText = t.owner_label);
@@ -675,76 +774,62 @@
         document.querySelectorAll('.stock-text').forEach(el => el.innerText = t.stock_text);
         document.querySelectorAll('.global-info').forEach(el => el.innerText = t.global_info);
         document.querySelectorAll('.footer-text').forEach(el => el.innerText = t.footer_text);
-        
-        // Terjemahan bagian DOWNLOAD FREE
         document.querySelectorAll('.download-free-title').forEach(el => el.innerText = t.download_free_title);
         document.querySelectorAll('.free-desc-text').forEach(el => el.innerText = t.free_desc_text);
-        document.querySelectorAll('.drone-label').forEach(el => el.innerText = t.drone_label);
-        document.querySelectorAll('.damage-label').forEach(el => el.innerText = t.damage_label);
         document.querySelectorAll('.free-note-text').forEach(el => el.innerText = t.free_note_text);
+        
+        // Update prompt kosong jika sedang tidak ada link yang dipilih
+        if (!activeItem) {
+            const area = document.getElementById('selectedLinkArea');
+            if (area && area.children.length === 0) {
+                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
+            } else if (activeItem) {
+                // Jika ada item aktif, refresh tampilan link dengan label yang baru
+                displaySelectedLink(activeItem);
+            }
+        } else {
+            // Refresh tampilan link yang sedang aktif agar label ikut berubah bahasa
+            displaySelectedLink(activeItem);
+        }
+        
+        // Re-render tombol pilihan dengan bahasa baru
+        renderFreeButtons();
+        
+        // update teks copy untuk tombol statis (join & owner) karena sudah diubah innerText via class .copy-text
+        document.querySelectorAll('.copy-btn:not(#selectedLinkArea .copy-btn)').forEach(btn => {
+            const span = btn.querySelector('.copy-text');
+            if (span) span.innerText = t.copy_text;
+        });
     }
-
-    // toggle language buttons
+    
+    // Tombol bahasa
     const langBtns = document.querySelectorAll('.lang-btn');
     langBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
             if (!lang) return;
-            currentLang = lang;
             setLanguage(lang);
-            // update active class
             langBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
     });
-
-    // inisialisasi default ID
+    
+    // Inisialisasi awal
     setLanguage('id');
-
-    // fungsi copy clipboard (support semua browser)
-    async function copyToClipboard(text, buttonElement) {
-        try {
-            await navigator.clipboard.writeText(text);
-            const originalHTML = buttonElement.innerHTML;
-            const copyTextSpan = buttonElement.querySelector('.copy-text');
-            const originalText = copyTextSpan ? copyTextSpan.innerText : (currentLang === 'id' ? 'Salin link' : 'Copy link');
-            buttonElement.innerHTML = '<i class="fas fa-check"></i> <span class="copy-text">' + (currentLang === 'id' ? 'Tersalin!' : 'Copied!') + '</span>';
-            buttonElement.style.backgroundColor = "#c6e0ff";
-            setTimeout(() => {
-                buttonElement.innerHTML = originalHTML;
-                buttonElement.style.backgroundColor = "";
-                const newSpan = buttonElement.querySelector('.copy-text');
-                if (newSpan) newSpan.innerText = (currentLang === 'id' ? 'Salin link' : 'Copy link');
-            }, 1500);
-        } catch (err) {
-            // fallback
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            const originalHTML = buttonElement.innerHTML;
-            buttonElement.innerHTML = '<i class="fas fa-check"></i> <span class="copy-text">' + (currentLang === 'id' ? 'Disalin!' : 'Copied!') + '</span>';
-            setTimeout(() => {
-                buttonElement.innerHTML = originalHTML;
-                const newSpan = buttonElement.querySelector('.copy-text');
-                if (newSpan) newSpan.innerText = (currentLang === 'id' ? 'Salin link' : 'Copy link');
-            }, 1500);
+    
+    // Untuk tombol copy statis (join/owner) tambahkan event listener manual (karena sudah ada class copy-btn)
+    const staticCopyBtns = document.querySelectorAll('.copy-btn');
+    staticCopyBtns.forEach(btn => {
+        // Hindari double listener
+        if (btn.getAttribute('data-listener') !== 'true') {
+            btn.setAttribute('data-listener', 'true');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const link = btn.getAttribute('data-link');
+                if (link) copyToClipboard(link, btn);
+            });
         }
-    }
-
-    // pasang event listener untuk semua tombol copy
-    const copyButtons = document.querySelectorAll('.copy-btn');
-    copyButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const link = btn.getAttribute('data-link');
-            if (link) copyToClipboard(link, btn);
-        });
     });
-
-    // fallback jika clipboard tidak support (sudah ditangani di dalam fungsi)
 </script>
 </body>
 </html>
