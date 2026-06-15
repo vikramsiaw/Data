@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap (QRIS, DANA, PayPal, Crypto). Tersedia juga download free Drone View & Damage.">
+    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap (QRIS, DANA, PayPal, Crypto). Tersedia juga download free Drone View & Damage (pilih dari dropdown).">
     <title>VIP Script Hub | Premium & Worth It</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -326,38 +326,33 @@
             color: #f59e0b;
         }
         
-        /* Tombol pilihan download free */
-        .free-options-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.2rem 0 1rem;
+        /* Dropdown style untuk download free */
+        .free-select-wrapper {
+            margin: 1rem 0 1rem;
+            width: 100%;
         }
-        .free-option-btn {
-            background: #eef2ff;
-            border: none;
-            padding: 0.6rem 1.2rem;
+        .free-select {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             border-radius: 60px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: #1e3a8a;
+            border: 1px solid #cbd5e1;
+            background-color: white;
+            color: #1e293b;
             cursor: pointer;
             transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
         }
-        .free-option-btn i {
-            font-size: 1rem;
-        }
-        .free-option-btn:hover {
-            background: #d9e6ff;
-            transform: translateY(-2px);
-        }
-        .free-option-btn:active {
-            transform: translateY(1px);
+        .free-select:hover, .free-select:focus {
+            border-color: #1f8ef1;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(31,142,241,0.1);
         }
         .selected-link-area {
             margin-top: 1rem;
@@ -399,8 +394,9 @@
                 font-size: 1rem;
                 padding: 0.6rem 1.2rem;
             }
-            .free-options-grid {
-                justify-content: center;
+            .free-select {
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
             }
             .payment-methods {
                 gap: 0.8rem;
@@ -525,23 +521,27 @@
         </ul>
     </div>
 
-    <!-- DOWNLOAD FREE - Dengan pilihan tombol (Drone View / Damage) -->
+    <!-- DOWNLOAD FREE - Menggunakan dropdown (bisa digulir) -->
     <div class="card">
         <div class="section-title">
             <i class="fas fa-cloud-download-alt"></i>
             <span class="download-free-title">DOWNLOAD FREE</span>
         </div>
         <p class="free-desc" style="margin-bottom: 0.5rem; color: #475569; font-size: 0.9rem;">
-            <i class="fas fa-info-circle"></i> <span class="free-desc-text">Pilih file yang ingin kamu download, nanti akan muncul link-nya.</span>
+            <i class="fas fa-info-circle"></i> <span class="free-desc-text">Pilih file dari daftar di bawah ini, link akan muncul otomatis.</span>
         </p>
 
-        <!-- Tempat tombol pilihan (akan di-generate oleh JS) -->
-        <div id="freeOptionsContainer" class="free-options-grid"></div>
+        <!-- Dropdown pilihan (dapat digulir) -->
+        <div class="free-select-wrapper">
+            <select id="freeSelect" class="free-select">
+                <option value="" disabled selected>-- Pilih file yang ingin di-download --</option>
+            </select>
+        </div>
 
         <!-- Area untuk menampilkan link yang dipilih -->
         <div id="selectedLinkArea" class="selected-link-area">
             <div class="empty-selection" id="emptySelectionMsg">
-                <i class="fas fa-mouse-pointer"></i> <span class="select-prompt">Klik salah satu tombol di atas untuk menampilkan link download.</span>
+                <i class="fas fa-mouse-pointer"></i> <span class="select-prompt">Silakan pilih file dari dropdown di atas.</span>
             </div>
         </div>
         <p class="free-footer-note" style="font-size: 0.7rem; margin-top: 1rem; color:#6c86a3; text-align: center;">
@@ -566,13 +566,14 @@
 </div>
 
 <script>
-    // Data item download free (ID, link, label multi bahasa)
+    // Data item download free (ID, link, label multi bahasa, icon)
     const freeItems = [
         { id: "drone2", link: "https://bicolink.com/rPCZ", labelId: "Drone View x2", labelEn: "Drone View x2", icon: "fa-eye" },
         { id: "drone3", link: "https://bicolink.com/ew122gdaxM", labelId: "Drone View X3", labelEn: "Drone View X3", icon: "fa-eye" },
         { id: "drone4", link: "https://bicolink.com/H5gX1juHJ5", labelId: "Drone View x4", labelEn: "Drone View x4", icon: "fa-eye" },
         { id: "damage1", link: "https://bicolink.com/N9x0", labelId: "Damage Txt + Drone View x3", labelEn: "Damage Txt + Drone View x3", icon: "fa-skull" },
-        { id: "damage2", link: "https://bicolink.com/K4E7Fwlz1", labelId: "Damage Bisa Main Ranked", labelEn: "Damage Can Play Ranked", icon: "fa-skull" }
+        { id: "damage2", link: "https://bicolink.com/K4E7Fwlz1", labelId: "Damage Bisa Main Ranked", labelEn: "Damage Can Play Ranked", icon: "fa-skull" },
+        { id: "damage70", link: "https://bicolink.com/CwWl839qHv", labelId: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", labelEn: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", icon: "fa-bolt" }
     ];
 
     let currentLang = 'id';
@@ -604,11 +605,12 @@
             global_info: "Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.",
             footer_text: "All trademarks belong to their respective owners.",
             download_free_title: "DOWNLOAD FREE",
-            free_desc_text: "Pilih file yang ingin kamu download, nanti akan muncul link-nya.",
+            free_desc_text: "Pilih file dari daftar di bawah ini, link akan muncul otomatis.",
             free_note_text: "Link free langsung dari server, update berkala.",
-            select_prompt: "Klik salah satu tombol di atas untuk menampilkan link download.",
+            select_prompt: "Silakan pilih file dari dropdown di atas.",
             copy_btn_text: "Salin link",
-            copied_feedback: "Tersalin!"
+            copied_feedback: "Tersalin!",
+            default_option: "-- Pilih file yang ingin di-download --"
         },
         en: {
             join_title: "JOIN FREE GROUP!",
@@ -634,11 +636,12 @@
             global_info: "All Telegram links are clickable and copyable — Click the copy button next to each link or click the link directly to open Telegram.",
             footer_text: "All trademarks belong to their respective owners.",
             download_free_title: "FREE DOWNLOAD",
-            free_desc_text: "Select the file you want to download, the link will appear.",
+            free_desc_text: "Select a file from the dropdown below, the link will appear automatically.",
             free_note_text: "Free links directly from server, regularly updated.",
-            select_prompt: "Click one of the buttons above to show download link.",
+            select_prompt: "Please select a file from the dropdown above.",
             copy_btn_text: "Copy link",
-            copied_feedback: "Copied!"
+            copied_feedback: "Copied!",
+            default_option: "-- Select file to download --"
         }
     };
 
@@ -657,15 +660,17 @@
         const itemLabel = currentLang === 'id' ? item.labelId : item.labelEn;
         const nameSpan = document.createElement('div');
         nameSpan.style.fontWeight = '600';
-        nameSpan.style.minWidth = '130px';
+        nameSpan.style.minWidth = '150px';
         nameSpan.style.display = 'flex';
         nameSpan.style.alignItems = 'center';
         nameSpan.style.gap = '0.5rem';
+        nameSpan.style.flexWrap = 'wrap';
         nameSpan.innerHTML = `<i class="fas ${item.icon}"></i> ${itemLabel}`;
         
         // Link container
         const linkDiv = document.createElement('div');
         linkDiv.className = 'url-text';
+        linkDiv.style.flex = '1';
         linkDiv.innerHTML = `<i class="fas fa-link"></i> <a href="${item.link}" target="_blank">${item.link}</a>`;
         
         // Tombol copy
@@ -723,24 +728,51 @@
         }
     }
     
-    // Render tombol pilihan berdasarkan bahasa
-    function renderFreeButtons() {
-        const container = document.getElementById('freeOptionsContainer');
-        if (!container) return;
-        container.innerHTML = '';
+    // Render dropdown options berdasarkan bahasa
+    function renderDropdown() {
+        const selectEl = document.getElementById('freeSelect');
+        if (!selectEl) return;
+        // Kosongkan kecuali option placeholder
+        selectEl.innerHTML = '';
+        const placeholderOption = document.createElement('option');
+        placeholderOption.value = '';
+        placeholderOption.disabled = true;
+        placeholderOption.selected = true;
+        placeholderOption.textContent = translations[currentLang].default_option;
+        selectEl.appendChild(placeholderOption);
+        
         freeItems.forEach(item => {
-            const btn = document.createElement('button');
-            btn.className = 'free-option-btn';
+            const option = document.createElement('option');
+            option.value = item.id;
             const label = currentLang === 'id' ? item.labelId : item.labelEn;
-            btn.innerHTML = `<i class="fas ${item.icon}"></i> ${label}`;
-            btn.addEventListener('click', () => {
-                displaySelectedLink(item);
-            });
-            container.appendChild(btn);
+            option.textContent = label;
+            option.setAttribute('data-link', item.link);
+            option.setAttribute('data-icon', item.icon);
+            option.setAttribute('data-label-id', item.labelId);
+            option.setAttribute('data-label-en', item.labelEn);
+            selectEl.appendChild(option);
         });
+        
+        // Event listener untuk perubahan pilihan
+        selectEl.onchange = (e) => {
+            const selectedId = e.target.value;
+            if (!selectedId) {
+                // Jika placeholder dipilih, kosongkan area
+                const area = document.getElementById('selectedLinkArea');
+                if (area) {
+                    area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${translations[currentLang].select_prompt}</span></div>`;
+                }
+                activeItem = null;
+                return;
+            }
+            const selectedItem = freeItems.find(item => item.id === selectedId);
+            if (selectedItem) {
+                displaySelectedLink(selectedItem);
+            }
+        };
     }
     
-    // Update semua teks statis (bagian lain) + reset tampilan link jika perlu
+    // Update semua teks statis (bagian lain) + reset dropdown & tampilan link
     function setLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
@@ -750,7 +782,6 @@
         document.querySelectorAll('.join-title').forEach(el => el.innerText = t.join_title);
         document.querySelectorAll('.btn-join-text').forEach(el => el.innerText = t.btn_join);
         document.querySelectorAll('.copy-text').forEach(el => {
-            // Hanya untuk tombol copy di area join/owner yang statis (bukan di dalam selectedLinkArea)
             if (el.closest('.copy-btn') && !el.closest('#selectedLinkArea')) {
                 el.innerText = t.copy_text;
             }
@@ -778,24 +809,23 @@
         document.querySelectorAll('.free-desc-text').forEach(el => el.innerText = t.free_desc_text);
         document.querySelectorAll('.free-note-text').forEach(el => el.innerText = t.free_note_text);
         
-        // Update prompt kosong jika sedang tidak ada link yang dipilih
-        if (!activeItem) {
-            const area = document.getElementById('selectedLinkArea');
-            if (area && area.children.length === 0) {
-                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
-            } else if (activeItem) {
-                // Jika ada item aktif, refresh tampilan link dengan label yang baru
-                displaySelectedLink(activeItem);
-            }
-        } else {
-            // Refresh tampilan link yang sedang aktif agar label ikut berubah bahasa
+        // Render ulang dropdown dengan bahasa baru
+        renderDropdown();
+        
+        // Jika sebelumnya ada item yang aktif, tampilkan ulang dengan bahasa baru
+        if (activeItem) {
             displaySelectedLink(activeItem);
+        } else {
+            // Tampilkan pesan kosong
+            const area = document.getElementById('selectedLinkArea');
+            if (area && (!area.children.length || area.children[0].classList?.contains('empty-selection') === false)) {
+                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
+            } else if (area && area.children.length === 0) {
+                area.innerHTML = `<div class="empty-selection"><i class="fas fa-mouse-pointer"></i> <span>${t.select_prompt}</span></div>`;
+            }
         }
         
-        // Re-render tombol pilihan dengan bahasa baru
-        renderFreeButtons();
-        
-        // update teks copy untuk tombol statis (join & owner) karena sudah diubah innerText via class .copy-text
+        // update teks copy untuk tombol statis (join & owner)
         document.querySelectorAll('.copy-btn:not(#selectedLinkArea .copy-btn)').forEach(btn => {
             const span = btn.querySelector('.copy-text');
             if (span) span.innerText = t.copy_text;
@@ -817,10 +847,9 @@
     // Inisialisasi awal
     setLanguage('id');
     
-    // Untuk tombol copy statis (join/owner) tambahkan event listener manual (karena sudah ada class copy-btn)
+    // Untuk tombol copy statis (join/owner) tambahkan event listener
     const staticCopyBtns = document.querySelectorAll('.copy-btn');
     staticCopyBtns.forEach(btn => {
-        // Hindari double listener
         if (btn.getAttribute('data-listener') !== 'true') {
             btn.setAttribute('data-listener', 'true');
             btn.addEventListener('click', (e) => {
