@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Dapatkan script VIP premium dengan harga terbaik. Update berkala, support cepat, pembayaran super lengkap.">
+    <title>VIP Script Hub | Premium & Worth It</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f9fafc 0%, #f1f4fa 100%);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1e293b;
+            position: relative;
+        }
+
+        /* language switcher */
+        .lang-switch {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: white;
+            border-radius: 60px;
+            padding: 0.3rem 0.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: #475569;
+        }
+        .lang-btn.active {
+            background: #1f8ef1;
+            color: white;
+            box-shadow: 0 2px 6px rgba(31,142,241,0.3);
+        }
+        .lang-btn:not(.active):hover {
+            background: #eef2ff;
+            color: #1f3a6b;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0,0,0,0.02);
+            padding: 1.8rem 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
+        }
+
+        .double-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .double-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            body {
+                padding: 1.2rem;
+                padding-top: 4rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .lang-switch {
+                top: 0.7rem;
+                right: 1rem;
+            }
+        }
+
+        .telegram-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #0f2b3d;
+        }
+        .telegram-title i {
+            font-size: 1.8rem;
+            color: #26A5E4;
+        }
+
+        .big-click-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(95deg, #1f8ef1, #0f6bcb);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin: 0.6rem 0 1rem 0;
+            width: fit-content;
+            box-shadow: 0 6px 14px rgba(31,142,241,0.25);
+            border: none;
+            font-family: inherit;
+        }
+        .big-click-btn i {
+            font-size: 1.3rem;
+        }
+        .big-click-btn:hover {
+            background: linear-gradient(95deg, #0f7ad9, #0a5bb3);
+            transform: scale(1.02);
+            box-shadow: 0 10px 18px rgba(31,142,241,0.3);
+        }
+
+        .url-row {
+            background: #f1f5f9;
+            border-radius: 60px;
+            padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+            border: 1px solid #e2e8f0;
+        }
+        .url-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            word-break: break-all;
+            color: #1e293b;
+            background: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .url-text a {
+            text-decoration: none;
+            color: #1e6fdf;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .url-text a:hover {
+            color: #0f5bc2;
+            text-decoration: underline;
+        }
+        .copy-btn {
+            background: #eef2ff;
+            border: none;
+            padding: 0.45rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #1e3a8a;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .copy-btn i {
+            font-size: 0.9rem;
+        }
+        .copy-btn:hover {
+            background: #d9e6ff;
+            color: #0f2f6f;
+            transform: scale(0.97);
+        }
+
+        .price-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .price-header h2 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2563eb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .price-header p {
+            color: #4b5563;
+            font-weight: 500;
+        }
+        .price-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .price-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1rem 1.8rem;
+            min-width: 150px;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef3;
+            transition: all 0.2s;
+            flex: 1 0 auto;
+        }
+        .price-card:hover {
+            border-color: #cbdff2;
+            background: #fefefe;
+        }
+        .price-currency {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .price-region {
+            font-weight: 600;
+            color: #2c3e66;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+            margin: 1rem 0 0.4rem;
+        }
+        .payment-badge {
+            background: #f8fafc;
+            padding: 0.6rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            border: 1px solid #e2edf7;
+        }
+        .payment-badge i {
+            font-size: 1.3rem;
+        }
+
+        .why-list {
+            list-style: none;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .why-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            background: #f5f9ff;
+            padding: 0.7rem 1.2rem;
+            border-radius: 60px;
+        }
+        .why-list li i {
+            color: #10b981;
+            font-size: 1.2rem;
+            width: 1.6rem;
+        }
+
+        .stock-urgent {
+            background: linear-gradient(115deg, #ffedd5, #fed7aa);
+            border-radius: 2rem;
+            text-align: center;
+            padding: 1.2rem;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #9b2c1d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            border-left: 6px solid #f97316;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0c4a6e;
+        }
+        .section-title i {
+            color: #f59e0b;
+        }
+
+        hr {
+            margin: 0.2rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+        }
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.8rem;
+        }
+        @media (max-width: 500px) {
+            .url-row {
+                flex-direction: column;
+                align-items: stretch;
+                border-radius: 1.5rem;
+            }
+            .copy-btn {
+                justify-content: center;
+            }
+            .big-click-btn {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <button class="lang-btn active" data-lang="id">🇮🇩 Indonesia</button>
+    <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+</div>
+
+<div class="container">
+    <!-- Bagian JOIN GROUP + OWNER -->
+    <div class="double-grid">
+        <!-- JOIN GROUP FREE! -->
+        <div class="card">
+            <div class="telegram-title">
+                <i class="fab fa-telegram-plane"></i>
+                <span class="join-title">JOIN GROUP FREE!</span>
+            </div>
+            <a href="https://t.me/vikramsiaw" target="_blank" class="big-click-btn">
+                <i class="fas fa-hand-pointer"></i> <span class="btn-join-text">Klik di sini 👇</span>
+            </a>
+            <div class="url-row">
+                <div class="url-text">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/vikramsiaw" target="_blank">https://t.me/vikramsiaw</a>
+                </div>
+                <button class="copy-btn" data-link="https://t.me/vikramsiaw">
+                    <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
+                </button>
+            </div>
+            <p class="hint-text" style="font-size: 0.75rem; color:#5b6e8c; margin-top: 0.6rem;">
+                <i class="fas fa-link"></i> <span class="hint-join">Klik tombol biru atau link di atas untuk gabung, tekan "Salin" untuk copas.</span>
+            </p>
+        </div>
+
+        <!-- MAU SCRIPT VIP? Chat langsung ke owner -->
+        <div class="card">
+            <div class="telegram-title">
+                <i class="fas fa-crown"></i>
+                <span class="vip-title">MAU SCRIPT VIP?</span>
+            </div>
+            <div class="owner-label" style="font-weight: 600; color:#2c3e50; margin-bottom: 0.5rem;">Chat langsung ke owner 👇</div>
+            <a href="https://t.me/SiwaMods" target="_blank" class="big-click-btn" style="background: linear-gradient(95deg, #1e6b3b, #0f5530);">
+                <i class="fab fa-telegram"></i> <span class="chat-owner-text">Chat Owner</span>
+            </a>
+            <div class="url-row">
+                <div class="url-text">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/SiwaMods" target="_blank">https://t.me/SiwaMods</a>
+                </div>
+                <button class="copy-btn" data-link="https://t.me/SiwaMods">
+                    <i class="fas fa-copy"></i> <span class="copy-text">Salin link</span>
+                </button>
+            </div>
+            <p class="hint-text" style="font-size: 0.75rem; color:#5b6e8c; margin-top: 0.6rem;">
+                <i class="fas fa-bolt"></i> <span class="owner-hint">Respon super cepat, garansi premium.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- HARGA SCRIPT - WORTH IT BANGET! -->
+    <div class="card">
+        <div class="price-header">
+            <h2><span class="price-head-main">💰 HARGA SCRIPT</span> <span class="price-head-badge" style="background: linear-gradient(135deg,#f59e0b,#dc2626); background-clip:text; -webkit-background-clip:text; color:transparent;">- WORTH IT BANGET!</span></h2>
+            <p class="price-sub">Dapatkan akses penuh script premium seumur hidup + update gratis</p>
+        </div>
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="price-currency">🇮🇩 95K</div>
+                <div class="price-region">Indonesia (IDR)</div>
+            </div>
+            <div class="price-card">
+                <div class="price-currency">🇺🇸 $7</div>
+                <div class="price-region">USA / Global (USD)</div>
+            </div>
+            <div class="price-card">
+                <div class="price-currency">🇲🇾 23 MYR</div>
+                <div class="price-region">Malaysia (Ringgit)</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 0.7rem; font-weight: 500; background: #eef2ff; width: fit-content; margin-left: auto; margin-right: auto; padding: 0.3rem 1.2rem; border-radius: 60px;">
+            <i class="fas fa-tag"></i> <span class="price-badge-text">Harga spesial langsung dari owner</span>
+        </div>
+    </div>
+
+    <!-- METODE PEMBAYARAN SUPER LENGKAP -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-credit-card"></i> 
+            <span class="payment-title">METODE PEMBAYARAN SUPER LENGKAP:</span>
+        </div>
+        <div class="payment-methods">
+            <div class="payment-badge"><i class="fas fa-wallet"></i> DANA</div>
+            <div class="payment-badge"><i class="fab fa-paypal"></i> PayPal</div>
+            <div class="payment-badge"><i class="fas fa-coins"></i> Crypto (USDT/BTC)</div>
+        </div>
+        <hr style="margin: 1rem 0 0.2rem;">
+        <p class="payment-note" style="text-align: center; font-size: 0.8rem; margin-top: 0.7rem; color:#2c5f8a;"><i class="fas fa-shield-alt"></i> Transaksi aman & nyaman, konfirmasi cepat</p>
+    </div>
+
+    <!-- KENAPA HARUS BELI DARI KAMI? -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-gem"></i>
+            <span class="why-title">✨ KENAPA HARUS BELI DARI KAMI?</span>
+        </div>
+        <ul class="why-list">
+            <li><i class="fas fa-check-circle"></i> <span class="why1">Script premium work 100% (tested & trusted)</span></li>
+            <li><i class="fas fa-sync-alt"></i> <span class="why2">Update berkala GRATIS seumur hidup</span></li>
+            <li><i class="fas fa-headset"></i> <span class="why3">Support respon cepat via Telegram (24/7)</span></li>
+            <li><i class="fas fa-laptop-code"></i> <span class="why4">Full dokumentasi & panduan install</span></li>
+        </ul>
+    </div>
+
+    <!-- BURUAN STOK TERBATAS -->
+    <div class="stock-urgent">
+        <i class="fas fa-rocket"></i> <span class="stock-text">🚀 Buruan, stok terbatas! 🚀</span>
+        <i class="fas fa-fire"></i>
+    </div>
+
+    <!-- informasi tambahan -->
+    <div style="background: #eef3fc; border-radius: 1.2rem; padding: 0.9rem 1rem; text-align: center; font-size: 0.8rem; color:#1e4663;">
+        <i class="fas fa-copy"></i> <span class="global-info">Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.</span>
+    </div>
+
+    <footer>
+        © 2025 VIP Script Hub — <span class="footer-text">All trademarks belong to their respective owners.</span>
+    </footer>
+</div>
+
+<script>
+    // Daftar terjemahan (ID dan EN)
+    const translations = {
+        id: {
+            join_title: "JOIN GROUP FREE!",
+            btn_join: "Klik di sini 👇",
+            copy_text: "Salin link",
+            hint_join: "Klik tombol biru atau link di atas untuk gabung, tekan \"Salin\" untuk copas.",
+            vip_title: "MAU SCRIPT VIP?",
+            owner_label: "Chat langsung ke owner 👇",
+            chat_owner: "Chat Owner",
+            owner_hint: "Respon super cepat, garansi premium.",
+            price_head: "💰 HARGA SCRIPT",
+            price_worth: "- WORTH IT BANGET!",
+            price_sub: "Dapatkan akses penuh script premium seumur hidup + update gratis",
+            price_badge: "Harga spesial langsung dari owner",
+            payment_title: "METODE PEMBAYARAN SUPER LENGKAP:",
+            payment_note: "Transaksi aman & nyaman, konfirmasi cepat",
+            why_title: "✨ KENAPA HARUS BELI DARI KAMI?",
+            why1: "Script premium work 100% (tested & trusted)",
+            why2: "Update berkala GRATIS seumur hidup",
+            why3: "Support respon cepat via Telegram (24/7)",
+            why4: "Full dokumentasi & panduan install",
+            stock_text: "🚀 Buruan, stok terbatas! 🚀",
+            global_info: "Semua link Telegram sudah bisa diklik dan disalin — Klik ikon copy di samping masing-masing tautan atau klik langsung link-nya untuk membuka Telegram.",
+            footer_text: "All trademarks belong to their respective owners."
+        },
+        en: {
+            join_title: "JOIN FREE GROUP!",
+            btn_join: "Click here 👇",
+            copy_text: "Copy link",
+            hint_join: "Click the blue button or the link above to join, press 'Copy' to copy.",
+            vip_title: "WANT VIP SCRIPT?",
+            owner_label: "Chat directly to owner 👇",
+            chat_owner: "Chat Owner",
+            owner_hint: "Super fast response, premium guarantee.",
+            price_head: "💰 SCRIPT PRICE",
+            price_worth: "- TOTALLY WORTH IT!",
+            price_sub: "Get full access to premium script lifetime + free updates",
+            price_badge: "Special price directly from owner",
+            payment_title: "SUPER COMPLETE PAYMENT METHODS:",
+            payment_note: "Safe & convenient transaction, fast confirmation",
+            why_title: "✨ WHY BUY FROM US?",
+            why1: "100% premium working script (tested & trusted)",
+            why2: "Lifetime FREE regular updates",
+            why3: "Fast response support via Telegram (24/7)",
+            why4: "Full documentation & installation guide",
+            stock_text: "🚀 Hurry up, limited stock! 🚀",
+            global_info: "All Telegram links are clickable and copyable — Click the copy button next to each link or click the link directly to open Telegram.",
+            footer_text: "All trademarks belong to their respective owners."
+        }
+    };
+
+    let currentLang = 'id';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        if (!t) return;
+
+        // Update semua elemen dengan kelas yang sudah ditandai
+        document.querySelectorAll('.join-title').forEach(el => el.innerText = t.join_title);
+        document.querySelectorAll('.btn-join-text').forEach(el => el.innerText = t.btn_join);
+        document.querySelectorAll('.copy-text').forEach(el => el.innerText = t.copy_text);
+        document.querySelectorAll('.hint-join').forEach(el => el.innerText = t.hint_join);
+        document.querySelectorAll('.vip-title').forEach(el => el.innerText = t.vip_title);
+        document.querySelectorAll('.owner-label').forEach(el => el.innerText = t.owner_label);
+        document.querySelectorAll('.chat-owner-text').forEach(el => el.innerText = t.chat_owner);
+        document.querySelectorAll('.owner-hint').forEach(el => el.innerText = t.owner_hint);
+        document.querySelectorAll('.price-head-main').forEach(el => el.innerText = t.price_head);
+        document.querySelectorAll('.price-head-badge').forEach(el => el.innerText = t.price_worth);
+        document.querySelectorAll('.price-sub').forEach(el => el.innerText = t.price_sub);
+        document.querySelectorAll('.price-badge-text').forEach(el => el.innerText = t.price_badge);
+        document.querySelectorAll('.payment-title').forEach(el => el.innerText = t.payment_title);
+        document.querySelectorAll('.payment-note').forEach(el => el.innerHTML = `<i class="fas fa-shield-alt"></i> ${t.payment_note}`);
+        document.querySelectorAll('.why-title').forEach(el => el.innerText = t.why_title);
+        document.querySelectorAll('.why1').forEach(el => el.innerText = t.why1);
+        document.querySelectorAll('.why2').forEach(el => el.innerText = t.why2);
+        document.querySelectorAll('.why3').forEach(el => el.innerText = t.why3);
+        document.querySelectorAll('.why4').forEach(el => el.innerText = t.why4);
+        document.querySelectorAll('.stock-text').forEach(el => el.innerText = t.stock_text);
+        document.querySelectorAll('.global-info').forEach(el => el.innerText = t.global_info);
+        document.querySelectorAll('.footer-text').forEach(el => el.innerText = t.footer_text);
+        
+        // tombol copy tetap menggunakan teks "Salin link" / "Copy link" sudah diupdate via .copy-text
+        // Update juga tombol pada tombol copy (innerHTML dinamis tapi kita sudah pakai span class)
+        // Hint text di bagian bawah card join & owner
+        // khusus untuk hint yang generic class hint-text isinya sudah terganti karena mengandung .hint-join dan .owner-hint
+        // pastikan juga untuk owner hint sudah ter-update.
+        // untuk bagian "Chat langsung ke owner" adalah .owner-label
+        // untuk tombol "Chat Owner" sudah
+    }
+
+    // toggle language buttons
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (!lang) return;
+            currentLang = lang;
+            setLanguage(lang);
+            // update active class
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // inisialisasi default ID
+    setLanguage('id');
+
+    // fungsi copy clipboard (sama seperti sebelumnya)
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    async function copyToClipboard(text, buttonElement) {
+        try {
+            await navigator.clipboard.writeText(text);
+            const originalHTML = buttonElement.innerHTML;
+            const copyTextSpan = buttonElement.querySelector('.copy-text');
+            const originalText = copyTextSpan ? copyTextSpan.innerText : "Salin link";
+            buttonElement.innerHTML = '<i class="fas fa-check"></i> <span class="copy-text">' + (currentLang === 'id' ? 'Tersalin!' : 'Copied!') + '</span>';
+            buttonElement.style.backgroundColor = "#c6e0ff";
+            setTimeout(() => {
+                buttonElement.innerHTML = originalHTML;
+                buttonElement.style.backgroundColor = "";
+                // pastikan kembali ke teks sesuai bahasa
+                const newSpan = buttonElement.querySelector('.copy-text');
+                if (newSpan) newSpan.innerText = (currentLang === 'id' ? 'Salin link' : 'Copy link');
+            }, 1500);
+        } catch (err) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const originalHTML = buttonElement.innerHTML;
+            buttonElement.innerHTML = '<i class="fas fa-check"></i> <span class="copy-text">' + (currentLang === 'id' ? 'Disalin!' : 'Copied!') + '</span>';
+            setTimeout(() => {
+                buttonElement.innerHTML = originalHTML;
+                const newSpan = buttonElement.querySelector('.copy-text');
+                if (newSpan) newSpan.innerText = (currentLang === 'id' ? 'Salin link' : 'Copy link');
+            }, 1500);
+        }
+    }
+
+    copyButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const link = btn.getAttribute('data-link');
+            if (link) copyToClipboard(link, btn);
+        });
+    });
+
+    // jika browser tidak mendukung clipboard API fallback sudah ada
+    if (!navigator.clipboard) {
+        copyButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const link = btn.getAttribute('data-link');
+                if (link) {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = link;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    const originalHTML = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> <span class="copy-text">' + (currentLang === 'id' ? 'Tersalin!' : 'Copied!') + '</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        const span = btn.querySelector('.copy-text');
+                        if (span) span.innerText = (currentLang === 'id' ? 'Salin link' : 'Copy link');
+                    }, 1500);
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>
