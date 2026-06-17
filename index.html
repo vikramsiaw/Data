@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Download free Drone View & Damage script. Pilih file, dapatkan link, salin dan download.">
+    <meta name="description" content="Download free Update Patch New Damage + Drone View. Pilih file, dapatkan link, salin dan download.">
     <title>Free Download Hub | Script & Tools</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -203,6 +203,16 @@
             border-top: 1px solid #e2e8f0;
             padding-top: 1rem;
         }
+        .badge-new {
+            background: #10b981;
+            color: white;
+            font-size: 0.6rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 40px;
+            font-weight: 700;
+            margin-left: 0.3rem;
+            text-transform: uppercase;
+        }
         @media (max-width: 550px) {
             .download-card {
                 padding: 1.5rem;
@@ -250,15 +260,22 @@
 </div>
 
 <script>
-    // Daftar file (sudah termasuk DAMAGE MAX yang baru)
+    // Daftar file (hanya dua sesuai permintaan)
     const fileList = [
-        { id: "drone2", name: "Drone View x2", link: "https://bicolink.com/rPCZ", icon: "fa-eye" },
-        { id: "drone3", name: "Drone View X3", link: "https://bicolink.com/ew122gdaxM", icon: "fa-eye" },
-        { id: "drone4", name: "Drone View x4", link: "https://bicolink.com/H5gX1juHJ5", icon: "fa-eye" },
-        { id: "damage_txt", name: "Damage Txt + Drone View x3", link: "https://bicolink.com/N9x0", icon: "fa-skull" },
-        { id: "damage_ranked", name: "Damage Bisa Main Ranked", link: "https://bicolink.com/K4E7Fwlz1", icon: "fa-skull" },
-        { id: "damage_70", name: "DAMAGE 70% WORK ALL HERO + BYPASS + DRONE VIEW", link: "https://bicolink.com/CwWl839qHv", icon: "fa-bolt" },
-        { id: "damage_max", name: "DAMAGE MAX WORK ALL HERO + BYPASS + DRONE VIEW", link: "https://bicolink.com/xXy0x298XL", icon: "fa-bolt" }
+        { 
+            id: "patch_drone1", 
+            name: "Update Patch New Damage + Drone x1", 
+            link: "https://bicolink.com/b8w", 
+            icon: "fa-bolt",
+            isNew: true 
+        },
+        { 
+            id: "patch_drone2", 
+            name: "Update Patch New Damage + Drone x2", 
+            link: "https://bicolink.com/w7qQgWG", 
+            icon: "fa-bolt",
+            isNew: true 
+        }
     ];
 
     // Elemen DOM
@@ -268,7 +285,6 @@
     // Fungsi untuk menampilkan link yang dipilih
     function showSelectedFile(selectedId) {
         if (!selectedId) {
-            // Tampilkan empty state
             displayArea.innerHTML = `
                 <div class="empty-state">
                     <i class="fas fa-mouse-pointer"></i>
@@ -280,11 +296,14 @@
         const file = fileList.find(f => f.id === selectedId);
         if (!file) return;
 
-        // Buat tampilan link
+        // Buat tampilan link dengan badge NEW
+        const badgeHtml = file.isNew ? `<span class="badge-new"><i class="fas fa-star"></i> NEW</span>` : '';
+
         displayArea.innerHTML = `
             <div class="link-card">
                 <div class="link-info">
                     <i class="fas ${file.icon}"></i>
+                    <span style="font-weight:600; font-size:0.9rem; color:#0f2b3d;">${file.name} ${badgeHtml}</span>
                     <div class="link-url">
                         <a href="${file.link}" target="_blank">${file.link}</a>
                     </div>
