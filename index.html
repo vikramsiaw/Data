@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drone Series · Premium Downloads</title>
+    <title>Drone Series · V1 & V2</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <style>
         /* ── reset & base ── */
@@ -31,7 +31,7 @@
 
         /* ── main card ── */
         .container {
-            max-width: 1120px;
+            max-width: 1200px;
             width: 100%;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(2px);
@@ -57,7 +57,7 @@
         /* ── header ── */
         .header {
             text-align: center;
-            margin-bottom: 3.2rem;
+            margin-bottom: 2.2rem;
             position: relative;
         }
 
@@ -95,17 +95,107 @@
         }
 
         .header p {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.35);
             font-weight: 400;
-            font-size: 1.05rem;
-            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            margin-top: 0.4rem;
             letter-spacing: 0.02em;
+        }
+
+        /* ── TAB OVERLAY MENU ── */
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-bottom: 2.8rem;
+            position: relative;
+            z-index: 5;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 60px;
+            padding: 0.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(8px);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 0.7rem 0.5rem;
+            border-radius: 40px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .tab-btn .icon {
+            font-size: 1rem;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tab-btn.v1.active {
+            background: linear-gradient(135deg, rgba(74, 108, 247, 0.2), rgba(109, 140, 255, 0.05));
+            border-color: rgba(74, 108, 247, 0.2);
+        }
+
+        .tab-btn.v2.active {
+            background: linear-gradient(135deg, rgba(255, 80, 80, 0.15), rgba(255, 180, 50, 0.05));
+            border-color: rgba(255, 80, 80, 0.2);
+        }
+
+        /* ── tab content ── */
+        .tab-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadePane 0.4s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadePane {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ── grid ── */
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.8rem;
             position: relative;
             z-index: 2;
@@ -161,7 +251,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #fff;
             background: linear-gradient(135deg, #1a2640, #0f1629);
@@ -182,9 +272,17 @@
             background: linear-gradient(135deg, #1a3a3a, #0c2a2a);
             border-color: rgba(100, 255, 220, 0.15);
         }
+        .drone-card.shizuku .drone-icon {
+            background: linear-gradient(135deg, #3a2a1a, #2a1a0c);
+            border-color: rgba(255, 180, 80, 0.15);
+        }
+        .drone-card.damage .drone-icon {
+            background: linear-gradient(135deg, #3a1a1a, #2a0c0c);
+            border-color: rgba(255, 80, 80, 0.15);
+        }
 
         .version-tag {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -202,18 +300,20 @@
         }
 
         .card-body h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #fff;
             letter-spacing: -0.01em;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.15rem;
+            line-height: 1.2;
         }
 
         .card-body .sub {
-            font-size: 0.82rem;
+            font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.25);
             font-weight: 400;
             letter-spacing: 0.02em;
+            margin-bottom: 0.6rem;
         }
 
         .link-wrapper {
@@ -222,10 +322,11 @@
             gap: 0.5rem;
             background: rgba(0, 0, 0, 0.35);
             border-radius: 14px;
-            padding: 0.4rem 0.4rem 0.4rem 1rem;
+            padding: 0.3rem 0.3rem 0.3rem 1rem;
             border: 1px solid rgba(255, 255, 255, 0.04);
             transition: border-color 0.25s;
-            margin-top: 0.8rem;
+            margin-top: 0.4rem;
+            flex-wrap: wrap;
         }
 
         .link-wrapper:hover {
@@ -234,7 +335,7 @@
 
         .link-wrapper .link-text {
             flex: 1;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: rgba(255, 255, 255, 0.5);
             font-weight: 400;
             white-space: nowrap;
@@ -270,9 +371,9 @@
             align-items: center;
             justify-content: center;
             gap: 0.35rem;
-            padding: 0.45rem 0.9rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 10px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.02em;
@@ -311,8 +412,8 @@
             background: rgba(255, 255, 255, 0.04);
             color: rgba(255, 255, 255, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 0.45rem 0.75rem;
-            font-size: 0.7rem;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.65rem;
         }
 
         .btn-copy:hover {
@@ -328,8 +429,8 @@
         }
 
         .btn svg {
-            width: 14px;
-            height: 14px;
+            width: 13px;
+            height: 13px;
             flex-shrink: 0;
             fill: currentColor;
         }
@@ -373,11 +474,19 @@
                 border-radius: 2rem;
             }
             .grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
                 gap: 1.2rem;
             }
             .header h1 {
                 font-size: 2.4rem;
+            }
+            .tab-bar {
+                max-width: 300px;
+                padding: 0.3rem;
+            }
+            .tab-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.3rem;
             }
         }
 
@@ -394,34 +503,45 @@
                 font-size: 2rem;
             }
             .header p {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
             .drone-card {
                 padding: 1.4rem 1.2rem 1.4rem;
             }
             .card-body h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             .link-wrapper {
                 flex-wrap: wrap;
                 padding: 0.4rem;
             }
             .link-wrapper .link-text {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
                 width: 100%;
-                padding: 0.2rem 0.6rem;
+                padding: 0.2rem 0.4rem;
             }
             .btn-group {
                 width: 100%;
                 justify-content: flex-end;
             }
             .btn {
-                font-size: 0.65rem;
-                padding: 0.4rem 0.7rem;
+                font-size: 0.6rem;
+                padding: 0.35rem 0.6rem;
             }
             .badge {
-                font-size: 0.6rem;
-                padding: 0.3rem 1rem;
+                font-size: 0.55rem;
+                padding: 0.25rem 0.9rem;
+            }
+            .tab-bar {
+                max-width: 260px;
+                gap: 0.3rem;
+            }
+            .tab-btn {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.2rem;
+            }
+            .tab-btn .icon {
+                font-size: 0.8rem;
             }
         }
 
@@ -433,7 +553,7 @@
             .btn {
                 flex: 1;
                 justify-content: center;
-                min-width: 60px;
+                min-width: 50px;
             }
         }
 
@@ -452,14 +572,17 @@
         .drone-card {
             animation: floatIn 0.6s ease both;
         }
-        .drone-card:nth-child(1) {
+        .tab-pane.active .drone-card:nth-child(1) {
             animation-delay: 0.05s;
         }
-        .drone-card:nth-child(2) {
-            animation-delay: 0.12s;
+        .tab-pane.active .drone-card:nth-child(2) {
+            animation-delay: 0.10s;
         }
-        .drone-card:nth-child(3) {
-            animation-delay: 0.19s;
+        .tab-pane.active .drone-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+        .tab-pane.active .drone-card:nth-child(4) {
+            animation-delay: 0.20s;
         }
     </style>
 </head>
@@ -471,104 +594,240 @@
         <div class="header">
             <div class="badge">✦ Next-Gen Aerial</div>
             <h1>Drone <span>Series</span></h1>
-            <p>Secure firmware downloads &nbsp;·&nbsp; X3 &nbsp;·&nbsp; X4 &nbsp;·&nbsp; X5</p>
+            <p>Firmware &amp; Tools · V1 Legacy · V2 Damage+Chmod</p>
         </div>
 
-        <!-- GRID -->
-        <div class="grid">
+        <!-- TAB OVERLAY MENU -->
+        <div class="tab-bar" role="tablist">
+            <button class="tab-btn v1 active" data-tab="v1" role="tab" aria-selected="true">
+                <span class="icon">📡</span> V1 · Legacy
+            </button>
+            <button class="tab-btn v2" data-tab="v2" role="tab" aria-selected="false">
+                <span class="icon">⚡</span> V2 · Damage+Chmod
+            </button>
+        </div>
 
-            <!-- X3 -->
-            <div class="drone-card x3">
-                <div class="card-top">
-                    <div class="drone-icon">X3</div>
-                    <span class="version-tag">v2.1</span>
-                </div>
-                <div class="card-body">
-                    <h3>Drone X3</h3>
-                    <div class="sub">Compact · 4K · 30 min</div>
-                    <div class="link-wrapper">
-                        <span class="link-text">
-                            <a href="https://safefileku.com/download/ls2CQPtDE5Qa8tmT" target="_blank" rel="noopener noreferrer">
-                                safefileku.com/download/ls2CQPtDE5Qa8tmT
-                            </a>
-                        </span>
-                        <div class="btn-group">
-                            <a href="https://safefileku.com/download/ls2CQPtDE5Qa8tmT" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                                Open
-                            </a>
-                            <button class="btn btn-copy" data-link="https://safefileku.com/download/ls2CQPtDE5Qa8tmT">
-                                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                                Copy
-                            </button>
+        <!-- TAB CONTENT -->
+        <div class="tab-content">
+
+            <!-- V1 PANE (OLD) -->
+            <div class="tab-pane active" id="tab-v1" role="tabpanel">
+                <div class="grid">
+                    <!-- X3 Old -->
+                    <div class="drone-card x3">
+                        <div class="card-top">
+                            <div class="drone-icon">X3</div>
+                            <span class="version-tag">v2.1</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X3</h3>
+                            <div class="sub">Compact · 4K</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/ls2CQPtDE5Qa8tmT" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/ls2CQPtDE5Qa8tmT
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/ls2CQPtDE5Qa8tmT" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/ls2CQPtDE5Qa8tmT">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- X4 Old -->
+                    <div class="drone-card x4">
+                        <div class="card-top">
+                            <div class="drone-icon">X4</div>
+                            <span class="version-tag">v3.0</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X4</h3>
+                            <div class="sub">Pro · 6K</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/qX2f2E5veFSw3mo6" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/qX2f2E5veFSw3mo6
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/qX2f2E5veFSw3mo6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/qX2f2E5veFSw3mo6">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- X5 Old -->
+                    <div class="drone-card x5">
+                        <div class="card-top">
+                            <div class="drone-icon">X5</div>
+                            <span class="version-tag">v4.2</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X5</h3>
+                            <div class="sub">Ultra · 8K</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/Tj5jbAFH7NspKRcZ" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/Tj5jbAFH7NspKRcZ
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/Tj5jbAFH7NspKRcZ" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/Tj5jbAFH7NspKRcZ">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- X4 -->
-            <div class="drone-card x4">
-                <div class="card-top">
-                    <div class="drone-icon">X4</div>
-                    <span class="version-tag">v3.0</span>
-                </div>
-                <div class="card-body">
-                    <h3>Drone X4</h3>
-                    <div class="sub">Pro · 6K · 45 min</div>
-                    <div class="link-wrapper">
-                        <span class="link-text">
-                            <a href="https://safefileku.com/download/qX2f2E5veFSw3mo6" target="_blank" rel="noopener noreferrer">
-                                safefileku.com/download/qX2f2E5veFSw3mo6
-                            </a>
-                        </span>
-                        <div class="btn-group">
-                            <a href="https://safefileku.com/download/qX2f2E5veFSw3mo6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                                Open
-                            </a>
-                            <button class="btn btn-copy" data-link="https://safefileku.com/download/qX2f2E5veFSw3mo6">
-                                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                                Copy
-                            </button>
+            <!-- V2 PANE (NEW: Damage + Chmod 777) -->
+            <div class="tab-pane" id="tab-v2" role="tabpanel">
+                <div class="grid">
+                    <!-- X3 Damage -->
+                    <div class="drone-card x3 damage">
+                        <div class="card-top">
+                            <div class="drone-icon">⚡X3</div>
+                            <span class="version-tag">v2.1+</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X3 + Damage + Chmod 777</h3>
+                            <div class="sub">Compact · 4K · Mod</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/zof8vau5g0UUIZdr" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/zof8vau5g0UUIZdr
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/zof8vau5g0UUIZdr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/zof8vau5g0UUIZdr">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- X4 Damage -->
+                    <div class="drone-card x4 damage">
+                        <div class="card-top">
+                            <div class="drone-icon">⚡X4</div>
+                            <span class="version-tag">v3.0+</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X4 + Damage + Chmod 777</h3>
+                            <div class="sub">Pro · 6K · Mod</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/tb5piUFq6OccqYbu" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/tb5piUFq6OccqYbu
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/tb5piUFq6OccqYbu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/tb5piUFq6OccqYbu">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- X5 Damage -->
+                    <div class="drone-card x5 damage">
+                        <div class="card-top">
+                            <div class="drone-icon">⚡X5</div>
+                            <span class="version-tag">v4.2+</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Drone X5 + Damage + Chmod 777</h3>
+                            <div class="sub">Ultra · 8K · Mod</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/Mh7SIEBLKj1On8sq" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/Mh7SIEBLKj1On8sq
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/Mh7SIEBLKj1On8sq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/Mh7SIEBLKj1On8sq">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shizuku Chmod 777 Termux -->
+                    <div class="drone-card shizuku">
+                        <div class="card-top">
+                            <div class="drone-icon">🛸</div>
+                            <span class="version-tag">Termux</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>Shizuku Chmod 777 Termux</h3>
+                            <div class="sub">Utility · Android</div>
+                            <div class="link-wrapper">
+                                <span class="link-text">
+                                    <a href="https://safefileku.com/download/OQtpZ9xXm9mlziSU" target="_blank" rel="noopener noreferrer">
+                                        safefileku.com/download/OQtpZ9xXm9mlziSU
+                                    </a>
+                                </span>
+                                <div class="btn-group">
+                                    <a href="https://safefileku.com/download/OQtpZ9xXm9mlziSU" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                        Open
+                                    </a>
+                                    <button class="btn btn-copy" data-link="https://safefileku.com/download/OQtpZ9xXm9mlziSU">
+                                        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- X5 -->
-            <div class="drone-card x5">
-                <div class="card-top">
-                    <div class="drone-icon">X5</div>
-                    <span class="version-tag">v4.2</span>
-                </div>
-                <div class="card-body">
-                    <h3>Drone X5</h3>
-                    <div class="sub">Ultra · 8K · 55 min</div>
-                    <div class="link-wrapper">
-                        <span class="link-text">
-                            <a href="https://safefileku.com/download/Tj5jbAFH7NspKRcZ" target="_blank" rel="noopener noreferrer">
-                                safefileku.com/download/Tj5jbAFH7NspKRcZ
-                            </a>
-                        </span>
-                        <div class="btn-group">
-                            <a href="https://safefileku.com/download/Tj5jbAFH7NspKRcZ" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                                Open
-                            </a>
-                            <button class="btn btn-copy" data-link="https://safefileku.com/download/Tj5jbAFH7NspKRcZ">
-                                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-                                Copy
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div><!-- /tab-content -->
 
-        </div><!-- /grid -->
-
-        <!-- footer note -->
-        <div style="text-align:center;margin-top:2.6rem;font-size:0.7rem;color:rgba(255,255,255,0.12);letter-spacing:0.06em;font-weight:400;border-top:1px solid rgba(255,255,255,0.02);padding-top:1.6rem;">
-            <span style="opacity:0.5;">✦</span> secure · encrypted · direct
+        <!-- footer -->
+        <div style="text-align:center;margin-top:2.8rem;font-size:0.65rem;color:rgba(255,255,255,0.08);letter-spacing:0.06em;font-weight:400;border-top:1px solid rgba(255,255,255,0.015);padding-top:1.6rem;">
+            <span style="opacity:0.4;">✦</span> secure · encrypted · direct
         </div>
 
     </div><!-- /container -->
@@ -580,6 +839,35 @@
 
     <script>
         (function() {
+            // ── Tab switching ──
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const panes = {
+                v1: document.getElementById('tab-v1'),
+                v2: document.getElementById('tab-v2')
+            };
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    // update buttons
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+
+                    // update panes
+                    Object.keys(panes).forEach(key => {
+                        panes[key].classList.remove('active');
+                    });
+                    if (panes[tabId]) {
+                        panes[tabId].classList.add('active');
+                    }
+                });
+            });
+
+            // ── Toast ──
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
             let toastTimer = null;
@@ -593,7 +881,7 @@
                 }, 2200);
             }
 
-            // Copy buttons
+            // ── Copy buttons ──
             const copyBtns = document.querySelectorAll('.btn-copy');
             copyBtns.forEach(btn => {
                 btn.addEventListener('click', function(e) {
@@ -601,13 +889,12 @@
                     const link = this.getAttribute('data-link');
                     if (!link) return;
 
-                    // Use clipboard API
                     if (navigator.clipboard && navigator.clipboard.writeText) {
                         navigator.clipboard.writeText(link).then(() => {
                             const original = this.innerHTML;
                             this.classList.add('copied');
                             this.innerHTML = `
-                                <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                                <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:currentColor;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
                                 Copied
                             `;
                             showToast('✓ Link copied to clipboard');
@@ -616,7 +903,6 @@
                                 this.innerHTML = original;
                             }, 2000);
                         }).catch(() => {
-                            // fallback
                             fallbackCopy(link);
                         });
                     } else {
@@ -625,7 +911,6 @@
                 });
             });
 
-            // Fallback copy method
             function fallbackCopy(text) {
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
@@ -643,16 +928,6 @@
                 }
                 document.body.removeChild(textarea);
             }
-
-            // Click on link text also copies (optional enhancement)
-            document.querySelectorAll('.link-text a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Allow normal navigation, but also copy? No — we keep it as navigation.
-                    // But we want copy to be explicit via button.
-                    // Let's keep it clean.
-                });
-            });
-
         })();
     </script>
 
